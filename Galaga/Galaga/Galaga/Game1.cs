@@ -172,6 +172,10 @@ namespace Galaga
             {
                 playerXLocs[1] = playerXLocs[1] + 3;
             }
+            //If the game has started,makes sure the players don't go off screen
+            if (!homeScreen) {
+             for (int x = 0; x < playerXLocs.GetLength(0); x++) { if (playerXLocs[x] < 0) { playerXLocs[x] = 0; } else if (playerXLocs[x] > 590) { playerXLocs[x] = 590; } }
+            }
             old = kb;
             base.Update(gameTime);
         }
