@@ -25,6 +25,8 @@ namespace Galaga
         Texture2D galagaNameArt;
         Texture2D space;
         Texture2D pointer;
+        Texture2D spaceShipTexture;
+        Texture2D spaceShip2Texture;
         SpriteFont homefont;
         KeyboardState old;
         bool mainmenu;
@@ -33,6 +35,8 @@ namespace Galaga
         bool highscore;
         Vector2 arrowPos;
         int highscoreNum;
+        bool homeScreen = true;
+        int[] playerXLocs;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -74,6 +78,8 @@ namespace Galaga
             space = this.Content.Load<Texture2D>("space");
             galagaNameArt = this.Content.Load<Texture2D>("galaga");
             pointer = this.Content.Load<Texture2D>("Pointer");
+            spaceShipTexture = Content.Load<Texture2D>("spaceship");
+            spaceShip2Texture = Content.Load<Texture2D>("spaceship2");
             homefont = this.Content.Load<SpriteFont>("HomePlayerSelection");
             highscoreNum = ReadFileOfIntegers(@"Content/high.txt");
             // TODO: use this.Content to load your game content here
@@ -135,6 +141,37 @@ namespace Galaga
                 else
                     arrow.Y = (int)arrowPos.Y;
             }
+            if (kb.IsKeyDown(Keys.Enter) && !old.IsKeyDown(Keys.Enter))
+            {
+                homeScreen = false;
+                if (arrow.Y == arrowPos.Y)
+                {
+                    playerXLocs = new int[1];
+                }
+                else if (arrow.Y == arrowPos.Y + 50)
+                {
+                    playerXLocs = new int[2];
+                    playerXLocs[1] = 560;
+                }
+                playerXLocs[0] = 30;
+            }
+            //The left right controls for both players
+            if (kb.IsKeyDown(Keys.A))
+            {
+                playerXLocs[0] = playerXLocs[0] - 3;
+            }
+            if (kb.IsKeyDown(Keys.D))
+            {
+                playerXLocs[0] = playerXLocs[0] + 3;
+            }
+            if (kb.IsKeyDown(Keys.Left))
+            {
+                playerXLocs[1] = playerXLocs[1] - 3;
+            }
+            if (kb.IsKeyDown(Keys.Right))
+            {
+                playerXLocs[1] = playerXLocs[1] + 3;
+            }
             old = kb;
             base.Update(gameTime);
         }
@@ -145,19 +182,34 @@ namespace Galaga
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             // TODO: Add your drawing code here
             spriteBatch.Begin();
             spriteBatch.Draw(space,background,Color.White);
-            if(mainmenu)
+            //Draws the home screen if the player hasn't started a game
+            if (homeScreen)
             {
                 spriteBatch.Draw(galagaNameArt, name, Color.White);
-                spriteBatch.Draw(pointer,arrow,Color.White);
-                spriteBatch.DrawString(homefont,"One Player",new Vector2(arrowPos.X + 50,arrowPos.Y), Color.White);
+                spriteBatch.Draw(pointer, arrow, Color.White);
+                spriteBatch.DrawString(homefont, "One Player", new Vector2(arrowPos.X + 50, arrowPos.Y), Color.White);
                 spriteBatch.DrawString(homefont, "Two Player", new Vector2(arrowPos.X + 50, arrowPos.Y + 50), Color.White);
-                spriteBatch.DrawString(homefont,"High Score: " , new Vector2(250,10), Color.Red);
-                spriteBatch.DrawString(homefont,  highscoreNum.ToString(), new Vector2(375, 10), Color.White);
+                spriteBatch.DrawString(homefont, "High Score: ", new Vector2(250, 10), Color.Red);
+                spriteBatch.DrawString(homefont, highscoreNum.ToString(), new Vector2(375, 10), Color.White);
+            }
+            //Otherwise draws the game
+            else
+            {
+                for (int x = 0; x < playerXLocs.GetLength(0); x++)
+                {
+                    Rectangle shipRectangle = new Rectangle(playerXLocs[x], 400, 50, 50);
+                    Texture2D tempShipTexture = spaceShipTexture;
+                    if (x == 1)
+                    {
+                        tempShipTexture = spaceShip2Texture;
+                    }
+                    spriteBatch.Draw(tempShipTexture, shipRectangle, Color.White);
+                }
             }
             spriteBatch.End();
             base.Draw(gameTime);

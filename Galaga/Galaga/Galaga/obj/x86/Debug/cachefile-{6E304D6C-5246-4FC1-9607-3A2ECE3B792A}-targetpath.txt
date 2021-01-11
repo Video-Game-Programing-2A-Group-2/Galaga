@@ -2,4 +2,6 @@ Content\space.xnb
 Content\galaga.xnb
 Content\Pointer.xnb
 Content\HomePlayerSelection.xnb
+Content\spaceship.xnb
+Content\spaceship2.xnb
 Content\high.txt
