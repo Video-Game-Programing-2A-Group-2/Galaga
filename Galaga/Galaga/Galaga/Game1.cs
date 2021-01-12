@@ -19,22 +19,33 @@ namespace Galaga
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        //Declare rectangles for game
         Rectangle background;
         Rectangle name;
         Rectangle arrow;
+        //Declare Textures for game
         Texture2D galagaNameArt;
         Texture2D space;
         Texture2D pointer;
         Texture2D spaceShipTexture;
         Texture2D spaceShip2Texture;
+        Texture2D bulletTexture;
+        //The font for most items
         SpriteFont homefont;
+        //Stores old keyboard state
         KeyboardState old;
+        //Keeps a list of locations for all bullets
+        List<int[,]> bulletLocations = new List<int[,]>();
+
+        int[] timeForPlayers = new int[2];
+
         bool mainmenu;
         bool oneplayer;
         bool twoplayer;
         bool highscore;
         Vector2 arrowPos;
         int highscoreNum;
+        //Keeps track of whether the game has started or not
         bool homeScreen = true;
         int[] playerXLocs;
         public Game1()
@@ -55,6 +66,7 @@ namespace Galaga
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            //Initialize all the variables
             background = new Rectangle(0,0,GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             name = new Rectangle(GraphicsDevice.Viewport.Width/2 - 160, 100,320,179);
             arrow = new Rectangle(name.X+50,name.Y+200,25,25);
@@ -80,6 +92,7 @@ namespace Galaga
             pointer = this.Content.Load<Texture2D>("Pointer");
             spaceShipTexture = Content.Load<Texture2D>("spaceship");
             spaceShip2Texture = Content.Load<Texture2D>("spaceship2");
+            bulletTexture = Content.Load<Texture2D>("bullet");
             homefont = this.Content.Load<SpriteFont>("HomePlayerSelection");
             highscoreNum = ReadFileOfIntegers(@"Content/high.txt");
             // TODO: use this.Content to load your game content here
@@ -127,6 +140,7 @@ namespace Galaga
                 this.Exit();
 
             // TODO: Add your update logic here
+            //Down and up are used to switch between single player and two player
             if(kb.IsKeyDown(Keys.Down) && !old.IsKeyDown(Keys.Down))
             {
                 if (arrow.Y == arrowPos.Y)
@@ -141,6 +155,7 @@ namespace Galaga
                 else
                     arrow.Y = (int)arrowPos.Y;
             }
+            //Pressing enter starts the game
             if (kb.IsKeyDown(Keys.Enter) && !old.IsKeyDown(Keys.Enter))
             {
                 homeScreen = false;
@@ -155,7 +170,7 @@ namespace Galaga
                 }
                 playerXLocs[0] = 30;
             }
-            //The left right controls for both players
+            //The left right controls for both players. A and D for player 1,and Left and Right for player 2
             if (kb.IsKeyDown(Keys.A))
             {
                 playerXLocs[0] = playerXLocs[0] - 3;
@@ -172,9 +187,46 @@ namespace Galaga
             {
                 playerXLocs[1] = playerXLocs[1] + 3;
             }
-            //If the game has started,makes sure the players don't go off screen
+            //Loops through the wait times(how long to wait before firing again) for players
+            for (int x=0; x<timeForPlayers.Length;x++) {
+                //Once halfway through the wait the second bullet is shot
+                if (timeForPlayers[x] == 10) {
+                    int[,] bulletLocation = new int[,] { { playerXLocs[x] + 19, 365 } };
+                    bulletLocations.Add(bulletLocation);
+                }
+                //Decrease the wait # if it's greater than 0
+                if (timeForPlayers[x]>0) {
+                    timeForPlayers[x]--;
+                }
+            }
+            //If the game has started,display everything that is needed
             if (!homeScreen) {
+                //If Space is pressed a bullet is fired for player one
              for (int x = 0; x < playerXLocs.GetLength(0); x++) { if (playerXLocs[x] < 0) { playerXLocs[x] = 0; } else if (playerXLocs[x] > 590) { playerXLocs[x] = 590; } }
+                if (kb.IsKeyDown(Keys.Space) && old.IsKeyUp(Keys.Space) && timeForPlayers[0] == 0){
+                    int[,] bulletLocation = new int[,] { {playerXLocs[0]+19,365} };
+                    bulletLocations.Add(bulletLocation);
+                    //The wait time before being able to fire again
+                    timeForPlayers[0] = 20;
+                }
+                //If right shift is pressed a bullet is fired for player two
+                if (kb.IsKeyDown(Keys.RightShift) && old.IsKeyUp(Keys.RightShift) && timeForPlayers[1] == 0)
+                {
+                    int[,] bulletLocation = new int[,] { { playerXLocs[1] + 19, 365 } };
+                    bulletLocations.Add(bulletLocation);
+                    //The wait time before being able to fire again
+                    timeForPlayers[1] = 20;
+                }
+            }
+            //Removes any bullets that are out of the bounds
+            for (int x=0;x<bulletLocations.Count();x++)
+            {
+                int[,] bulletCoords = bulletLocations.ElementAt<int[,]>(x);
+                if (bulletCoords[0,0] > 640 || bulletCoords[0,0] < -12 || bulletCoords[0,1] > 480 || bulletCoords[0,1] < -24) { bulletLocations.RemoveAt(x); }
+            }
+            //Moves each bullet up
+            foreach (int[,] bulletCoord in bulletLocations) {
+                bulletCoord[0, 1] -= 7;
             }
             old = kb;
             base.Update(gameTime);
@@ -202,17 +254,25 @@ namespace Galaga
                 spriteBatch.DrawString(homefont, highscoreNum.ToString(), new Vector2(375, 10), Color.White);
             }
             //Otherwise draws the game
-            else
+            else 
             {
+                //For each player loop through once and draw ship
                 for (int x = 0; x < playerXLocs.GetLength(0); x++)
                 {
                     Rectangle shipRectangle = new Rectangle(playerXLocs[x], 400, 50, 50);
                     Texture2D tempShipTexture = spaceShipTexture;
+                    //for player 2 change ship color
                     if (x == 1)
                     {
                         tempShipTexture = spaceShip2Texture;
                     }
+                    //Draw the ship
                     spriteBatch.Draw(tempShipTexture, shipRectangle, Color.White);
+                }
+                //For each bullet,create a rectangle and draw it
+                foreach(int[,] bulletCoords in bulletLocations) {
+                    Rectangle tempRecangle = new Rectangle(bulletCoords[0, 0], bulletCoords[0, 1], 12, 24);
+                    spriteBatch.Draw(bulletTexture,tempRecangle,Color.White);
                 }
             }
             spriteBatch.End();
