@@ -48,6 +48,70 @@ namespace Galaga
         //Keeps track of whether the game has started or not
         bool homeScreen = true;
         int[] playerXLocs;
+
+        Rectangle recbk;
+        Texture2D texbk;
+
+        Rectangle recbg1, recbg2, recbg3, recbg4;
+        Texture2D texbg;
+
+        Rectangle recrg1;
+        Rectangle recrg2;
+        Rectangle recrg3;
+        Rectangle recrg4;
+        Rectangle recrg5;
+        Rectangle recrg6;
+        Rectangle recrg7;
+        Rectangle recrg8;
+        Rectangle recrg9;
+        Rectangle recrg10;
+        Rectangle recrg11;
+        Rectangle recrg12;
+        Rectangle recrg13;
+        Rectangle recrg14;
+        Rectangle recrg15;
+        Rectangle recrg16;
+        Texture2D texrg;
+
+        Rectangle recbeg1;
+        Rectangle recbeg2;
+        Rectangle recbeg3;
+        Rectangle recbeg4;
+        Rectangle recbeg5;
+        Rectangle recbeg6;
+        Rectangle recbeg7;
+        Rectangle recbeg8;
+        Rectangle recbeg9;
+        Rectangle recbeg10;
+        Rectangle recbeg11;
+        Rectangle recbeg12;
+        Rectangle recbeg13;
+        Rectangle recbeg14;
+        Rectangle recbeg15;
+        Rectangle recbeg16;
+        Rectangle recbeg17;
+        Rectangle recbeg18;
+        Rectangle recbeg19;
+        Rectangle recbeg20;
+        Texture2D texbeg;
+
+        private double timer;
+        private int seconds;
+
+        private bool expand;
+
+        private double x1;
+        private double x2;
+        private double x3;
+        private double x4;
+        private double x5;
+
+        private double y1;
+        private double y2;
+        private double y3;
+        private double y4;
+        private double y5;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
