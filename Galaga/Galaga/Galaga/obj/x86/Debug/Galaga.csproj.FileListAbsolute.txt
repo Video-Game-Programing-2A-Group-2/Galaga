@@ -43,3 +43,6 @@ C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\obj\x86\Debu
 C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\spaceship.xnb
 C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\spaceship2.xnb
 C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\bullet.xnb
+C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\spaceship.xnb
+C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\spaceship2.xnb
+C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\bullet.xnb

@@ -52,8 +52,8 @@ namespace Galaga
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            graphics.PreferredBackBufferWidth = 640;  // set this value to the desired width of your window
-            graphics.PreferredBackBufferHeight = 480;   // set this value to the desired height of your window
+            graphics.PreferredBackBufferWidth = 480;  // set this value to the desired width of your window
+            graphics.PreferredBackBufferHeight = 640;   // set this value to the desired height of your window
             graphics.ApplyChanges();
         }
 
