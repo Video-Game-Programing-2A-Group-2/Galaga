@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\space.xnb</Output>
-      <Time>2021-01-07T11:37:40.4388611-06:00</Time>
+      <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\space.xnb</Output>
+      <Time>2021-01-13T11:18:32.7901392-06:00</Time>
     </Item>
     <Item>
       <Source>galaga.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\galaga.xnb</Output>
-      <Time>2021-01-07T11:43:24.5006803-06:00</Time>
+      <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\galaga.xnb</Output>
+      <Time>2021-01-13T11:18:32.7861383-06:00</Time>
     </Item>
     <Item>
       <Source>Pointer.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\Pointer.xnb</Output>
-      <Time>2021-01-07T11:53:21.0732347-06:00</Time>
+      <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\Pointer.xnb</Output>
+      <Time>2021-01-13T11:18:32.7831374-06:00</Time>
     </Item>
     <Item>
       <Source>spaceship.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\spaceship.xnb</Output>
-      <Time>2021-01-12T10:54:18.9979532-06:00</Time>
+      <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\spaceship.xnb</Output>
+      <Time>2021-01-13T11:18:32.7901392-06:00</Time>
     </Item>
     <Item>
       <Source>spaceship2.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\spaceship2.xnb</Output>
-      <Time>2021-01-12T10:54:18.9979532-06:00</Time>
+      <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\spaceship2.xnb</Output>
+      <Time>2021-01-13T11:18:32.7921409-06:00</Time>
     </Item>
     <Item>
       <Source>bullet.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\bullet.xnb</Output>
-      <Time>2021-01-12T10:54:18.9939728-06:00</Time>
+      <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\bullet.xnb</Output>
+      <Time>2021-01-13T11:18:32.7841377-06:00</Time>
     </Item>
     <Item>
       <Source>HomePlayerSelection.spritefont</Source>
@@ -61,8 +61,35 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\HomePlayerSelection.xnb</Output>
-      <Time>2021-01-07T20:53:58.8276021-06:00</Time>
+      <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\HomePlayerSelection.xnb</Output>
+      <Time>2021-01-13T11:18:32.7821374-06:00</Time>
+    </Item>
+    <Item>
+      <Source>BeeGalaga.png</Source>
+      <Name>BeeGalaga</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\BeeGalaga.xnb</Output>
+      <Time>2021-01-13T12:08:47.8833624-06:00</Time>
+    </Item>
+    <Item>
+      <Source>BossGalaga.png</Source>
+      <Name>BossGalaga</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\BossGalaga.xnb</Output>
+      <Time>2021-01-13T12:08:47.9023665-06:00</Time>
+    </Item>
+    <Item>
+      <Source>RedGalaga.png</Source>
+      <Name>RedGalaga</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\RedGalaga.xnb</Output>
+      <Time>2021-01-13T12:08:47.9163699-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -71,39 +98,39 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\GalagaContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\GalagaContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2011-09-01T16:22:30-05:00</Value>
+        <Value>2011-09-01T18:22:30-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2011-09-01T16:22:30-05:00</Value>
+        <Value>2011-09-01T18:22:30-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2011-09-01T16:22:30-05:00</Value>
+        <Value>2011-09-01T18:22:30-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2011-09-01T16:22:30-05:00</Value>
+        <Value>2011-09-01T18:22:30-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2011-09-01T16:22:30-05:00</Value>
+        <Value>2011-09-01T18:22:30-05:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2011-09-01T16:22:30-05:00</Value>
+        <Value>2011-09-01T18:22:30-05:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2020-08-13T11:33:33.7938883-05:00</Value>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2020-10-07T23:43:18.9089293-05:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

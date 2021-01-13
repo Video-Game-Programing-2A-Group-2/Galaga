@@ -5,4 +5,7 @@ Content\spaceship.xnb
 Content\spaceship2.xnb
 Content\bullet.xnb
 Content\HomePlayerSelection.xnb
+Content\BeeGalaga.xnb
+Content\BossGalaga.xnb
+Content\RedGalaga.xnb
 Content\high.txt
