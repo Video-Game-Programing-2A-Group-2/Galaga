@@ -4,8 +4,20 @@ Content\Pointer.xnb
 Content\spaceship.xnb
 Content\spaceship2.xnb
 Content\bullet.xnb
-Content\HomePlayerSelection.xnb
 Content\BeeGalaga.xnb
 Content\BossGalaga.xnb
 Content\RedGalaga.xnb
+Content\HomePlayerSelection.xnb
+Content\01 Stage Intro.xnb
+Content\01 Stage Intro.wma
+Content\02 Fighter Captured.xnb
+Content\02 Fighter Captured.wma
+Content\03 Fighter Rescued.xnb
+Content\03 Fighter Rescued.wma
+Content\04 Captured Fighter Destroyed.xnb
+Content\04 Captured Fighter Destroyed.wma
+Content\08 1-Up.xnb
+Content\08 1-Up.wma
+Content\09 Die-Start Up Sound.xnb
+Content\09 Die-Start Up Sound.wma
 Content\high.txt

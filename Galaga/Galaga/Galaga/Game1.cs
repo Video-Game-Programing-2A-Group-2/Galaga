@@ -48,6 +48,9 @@ namespace Galaga
         //Keeps track of whether the game has started or not
         bool homeScreen = true;
         int[] playerXLocs;
+        int score = 0;
+
+        int shipsLeft = 2;
 
         //current enemy spawn and lokation
         List<Rectangle> BossRec = new List<Rectangle>();
@@ -66,6 +69,13 @@ namespace Galaga
         private double x1, x2, x3, x4, x5;
         private double y1, y2, y3, y4, y5;
 
+
+        Song intro;
+        Song captured;
+        Song rescued;
+        Song destroyed;
+        Song oneup;
+        Song diestartup;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -157,6 +167,8 @@ namespace Galaga
             y4 = 0;
             y5 = 0;
 
+            LoadContent();
+            MediaPlayer.Play(intro);
             base.Initialize();
         }
 
@@ -183,6 +195,12 @@ namespace Galaga
             texbeg = this.Content.Load<Texture2D>("BeeGalaga");
 
             // TODO: use this.Content to load your game content here
+             intro = this.Content.Load<Song>("01 Stage Intro");
+             captured = this.Content.Load<Song>("02 FIghter Captured");
+             rescued = this.Content.Load<Song>("03 Fighter Rescued");
+             destroyed = this.Content.Load<Song>("04 Captured Fighter Destroyed");
+             oneup = this.Content.Load<Song>("08 1-Up");
+             diestartup = this.Content.Load<Song>("09 Die-Start Up Sound");
         }
 
         /// <summary>
@@ -228,6 +246,7 @@ namespace Galaga
 
             // TODO: Add your update logic here
             //Down and up are used to switch between single player and two player
+            
             if(kb.IsKeyDown(Keys.Down) && !old.IsKeyDown(Keys.Down))
             {
                 if (arrow.Y == arrowPos.Y)
@@ -304,12 +323,47 @@ namespace Galaga
                     //The wait time before being able to fire again
                     timeForPlayers[1] = 20;
                 }
+                
             }
             //Removes any bullets that are out of the bounds
             for (int x=0;x<bulletLocations.Count();x++)
             {
                 int[,] bulletCoords = bulletLocations.ElementAt<int[,]>(x);
                 if (bulletCoords[0,0] > 640 || bulletCoords[0,0] < -12 || bulletCoords[0,1] > 480 || bulletCoords[0,1] < -24) { bulletLocations.RemoveAt(x); }
+                Rectangle tempRecangle = new Rectangle(bulletCoords[0, 0], bulletCoords[0, 1], 12, 24);
+                for(int i = 0; i < RedRec.Count;i++)
+                {
+                    if(tempRecangle.Intersects(RedRec.ElementAt(i)))
+                    {
+                        bulletLocations.RemoveAt(x);
+                        RedRec.RemoveAt(i);
+                        score += 200;
+                        break;
+                    }
+                }
+                for (int i = 0; i < BeeRec.Count; i++)
+                {
+                    if (tempRecangle.Intersects(BeeRec.ElementAt(i)))
+                    {
+                        bulletLocations.RemoveAt(x);
+                        BeeRec.RemoveAt(i);
+                        score += 100;
+                        break;
+                    }
+                }
+                for (int i = 0; i < BossRec.Count; i++)
+                {
+                    if (tempRecangle.Intersects(BossRec.ElementAt(i)))
+                    {
+                        bulletLocations.RemoveAt(x);
+                        BossRec.RemoveAt(i);
+                        score += 1000;
+                        break;
+                    }
+                }
+
+
+
             }
             //Moves each bullet up
             foreach (int[,] bulletCoord in bulletLocations) {
@@ -460,6 +514,8 @@ namespace Galaga
             // TODO: Add your drawing code here
             spriteBatch.Begin();
             spriteBatch.Draw(space,background,Color.White);
+            spriteBatch.DrawString(homefont, "High Score: ", new Vector2(150, 10), Color.Red);
+            spriteBatch.DrawString(homefont, highscoreNum.ToString(), new Vector2(275, 10), Color.White);
             //Draws the home screen if the player hasn't started a game
             if (homeScreen)
             {
@@ -467,12 +523,14 @@ namespace Galaga
                 spriteBatch.Draw(pointer, arrow, Color.White);
                 spriteBatch.DrawString(homefont, "One Player", new Vector2(arrowPos.X + 50, arrowPos.Y), Color.White);
                 spriteBatch.DrawString(homefont, "Two Player", new Vector2(arrowPos.X + 50, arrowPos.Y + 50), Color.White);
-                spriteBatch.DrawString(homefont, "High Score: ", new Vector2(250, 10), Color.Red);
-                spriteBatch.DrawString(homefont, highscoreNum.ToString(), new Vector2(375, 10), Color.White);
+                
+                
             }
             //Otherwise draws the game
             else 
             {
+                spriteBatch.DrawString(homefont, "Score: ", new Vector2(20, 10), Color.Red);
+                spriteBatch.DrawString(homefont, score .ToString(), new Vector2(100, 10), Color.White);
                 //For each player loop through once and draw ship
                 for (int x = 0; x < playerXLocs.GetLength(0); x++)
                 {
@@ -485,21 +543,26 @@ namespace Galaga
                     }
                     //Draw the ship
                     spriteBatch.Draw(tempShipTexture, shipRectangle, Color.White);
+                    for(int i = 0; i < shipsLeft; i++)
+                    {
+                        spriteBatch.Draw(tempShipTexture, new Rectangle(10 + (50*i), 600, 40, 40), Color.White);
+                    }
                 }
                 //For each bullet,create a rectangle and draw it
                 foreach(int[,] bulletCoords in bulletLocations) {
                     Rectangle tempRecangle = new Rectangle(bulletCoords[0, 0], bulletCoords[0, 1], 12, 24);
                     spriteBatch.Draw(bulletTexture,tempRecangle,Color.White);
                 }
+                for (int i = 0; i < BossRec.Count(); i++) { spriteBatch.Draw(texbg, BossRec[i], Color.White); }
+                //red galaga
+                for (int i = 0; i < RedRec.Count(); i++) { spriteBatch.Draw(texrg, RedRec[i], Color.White); }
+                //bee galaga
+                for (int i = 0; i < BeeRec.Count; i++) { spriteBatch.Draw(texbeg, BeeRec[i], Color.White); }
             }
 
             //Enemies
             //boss galaga
-            for (int i = 0; i < 4; i++) { spriteBatch.Draw(texbg, BossRec[i], Color.White); }
-            //red galaga
-            for (int i = 0; i < 16; i++) { spriteBatch.Draw(texrg, RedRec[i], Color.White); }
-            //bee galaga
-            for (int i = 0; i < 20; i++) { spriteBatch.Draw(texbeg, BeeRec[i], Color.White); }
+           
 
 
             spriteBatch.End();
