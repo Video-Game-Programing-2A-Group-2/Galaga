@@ -88,3 +88,18 @@ C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Conten
 C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\04 Captured Fighter Destroyed.wma
 C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\08 1-Up.wma
 C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\09 Die-Start Up Sound.wma
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\BeeGalaga.xnb
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\BossGalaga.xnb
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\RedGalaga.xnb
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\01 Stage Intro.xnb
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\02 Fighter Captured.xnb
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\03 Fighter Rescued.xnb
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\04 Captured Fighter Destroyed.xnb
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\08 1-Up.xnb
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\09 Die-Start Up Sound.xnb
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\01 Stage Intro.wma
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\02 Fighter Captured.wma
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\03 Fighter Rescued.wma
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\04 Captured Fighter Destroyed.wma
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\08 1-Up.wma
+C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\09 Die-Start Up Sound.wma
