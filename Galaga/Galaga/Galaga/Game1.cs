@@ -272,7 +272,7 @@ namespace Galaga
                 else if (arrow.Y == arrowPos.Y + 50)
                 {
                     playerXLocs = new int[2];
-                    playerXLocs[1] = 560;
+                    playerXLocs[1] = 400;
                 }
                 playerXLocs[0] = 30;
             }
@@ -297,7 +297,7 @@ namespace Galaga
             for (int x=0; x<timeForPlayers.Length;x++) {
                 //Once halfway through the wait the second bullet is shot
                 if (timeForPlayers[x] == 10) {
-                    int[,] bulletLocation = new int[,] { { playerXLocs[x] + 19, 365 } };
+                    int[,] bulletLocation = new int[,] { { playerXLocs[x] + 19, 570 } };
                     bulletLocations.Add(bulletLocation);
                 }
                 //Decrease the wait # if it's greater than 0
@@ -308,9 +308,9 @@ namespace Galaga
             //If the game has started,display everything that is needed
             if (!homeScreen) {
                 //If Space is pressed a bullet is fired for player one
-             for (int x = 0; x < playerXLocs.GetLength(0); x++) { if (playerXLocs[x] < 0) { playerXLocs[x] = 0; } else if (playerXLocs[x] > 590) { playerXLocs[x] = 590; } }
+             for (int x = 0; x < playerXLocs.GetLength(0); x++) { if (playerXLocs[x] < 0) { playerXLocs[x] = 0; } else if (playerXLocs[x] > 430) { playerXLocs[x] = 430; } }
                 if (kb.IsKeyDown(Keys.Space) && old.IsKeyUp(Keys.Space) && timeForPlayers[0] == 0){
-                    int[,] bulletLocation = new int[,] { {playerXLocs[0]+19,365} };
+                    int[,] bulletLocation = new int[,] { {playerXLocs[0]+19,570} };
                     bulletLocations.Add(bulletLocation);
                     //The wait time before being able to fire again
                     timeForPlayers[0] = 20;
@@ -318,7 +318,7 @@ namespace Galaga
                 //If right shift is pressed a bullet is fired for player two
                 if (kb.IsKeyDown(Keys.RightShift) && old.IsKeyUp(Keys.RightShift) && timeForPlayers[1] == 0)
                 {
-                    int[,] bulletLocation = new int[,] { { playerXLocs[1] + 19, 365 } };
+                    int[,] bulletLocation = new int[,] { { playerXLocs[1] + 19, 570 } };
                     bulletLocations.Add(bulletLocation);
                     //The wait time before being able to fire again
                     timeForPlayers[1] = 20;
@@ -329,7 +329,7 @@ namespace Galaga
             for (int x=0;x<bulletLocations.Count();x++)
             {
                 int[,] bulletCoords = bulletLocations.ElementAt<int[,]>(x);
-                if (bulletCoords[0,0] > 640 || bulletCoords[0,0] < -12 || bulletCoords[0,1] > 480 || bulletCoords[0,1] < -24) { bulletLocations.RemoveAt(x); }
+                if (bulletCoords[0,0] > 480 || bulletCoords[0,0] < -12 || bulletCoords[0,1] > 640 || bulletCoords[0,1] < -24) { bulletLocations.RemoveAt(x); }
                 Rectangle tempRecangle = new Rectangle(bulletCoords[0, 0], bulletCoords[0, 1], 12, 24);
                 for(int i = 0; i < RedRec.Count;i++)
                 {
@@ -534,7 +534,7 @@ namespace Galaga
                 //For each player loop through once and draw ship
                 for (int x = 0; x < playerXLocs.GetLength(0); x++)
                 {
-                    Rectangle shipRectangle = new Rectangle(playerXLocs[x], 400, 50, 50);
+                    Rectangle shipRectangle = new Rectangle(playerXLocs[x], 570, 50, 50);
                     Texture2D tempShipTexture = spaceShipTexture;
                     //for player 2 change ship color
                     if (x == 1)
@@ -545,7 +545,7 @@ namespace Galaga
                     spriteBatch.Draw(tempShipTexture, shipRectangle, Color.White);
                     for(int i = 0; i < shipsLeft; i++)
                     {
-                        spriteBatch.Draw(tempShipTexture, new Rectangle(10 + (50*i), 600, 40, 40), Color.White);
+                        //spriteBatch.Draw(tempShipTexture, new Rectangle(10 + (50*i), 600, 40, 40), Color.White);
                     }
                 }
                 //For each bullet,create a rectangle and draw it
