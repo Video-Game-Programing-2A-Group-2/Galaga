@@ -246,7 +246,6 @@ namespace Galaga
 
             // TODO: Add your update logic here
             //Down and up are used to switch between single player and two player
-            
             if(kb.IsKeyDown(Keys.Down) && !old.IsKeyDown(Keys.Down))
             {
                 if (arrow.Y == arrowPos.Y)
@@ -277,19 +276,20 @@ namespace Galaga
                 playerXLocs[0] = 30;
             }
             //The left right controls for both players. A and D for player 1,and Left and Right for player 2
-            if (kb.IsKeyDown(Keys.A))
+            Console.WriteLine("TEST");
+            if (kb.IsKeyDown(Keys.A) && playerXLocs != null)
             {
                 playerXLocs[0] = playerXLocs[0] - 3;
             }
-            if (kb.IsKeyDown(Keys.D))
+            if (kb.IsKeyDown(Keys.D) && playerXLocs != null)
             {
                 playerXLocs[0] = playerXLocs[0] + 3;
             }
-            if (kb.IsKeyDown(Keys.Left))
+            if (kb.IsKeyDown(Keys.Left) && playerXLocs != null && playerXLocs.Length >= 2)
             {
                 playerXLocs[1] = playerXLocs[1] - 3;
             }
-            if (kb.IsKeyDown(Keys.Right))
+            if (kb.IsKeyDown(Keys.Right) && playerXLocs != null && playerXLocs.Length >= 2)
             {
                 playerXLocs[1] = playerXLocs[1] + 3;
             }
@@ -309,14 +309,15 @@ namespace Galaga
             if (!homeScreen) {
                 //If Space is pressed a bullet is fired for player one
              for (int x = 0; x < playerXLocs.GetLength(0); x++) { if (playerXLocs[x] < 0) { playerXLocs[x] = 0; } else if (playerXLocs[x] > 430) { playerXLocs[x] = 430; } }
-                if (kb.IsKeyDown(Keys.Space) && old.IsKeyUp(Keys.Space) && timeForPlayers[0] == 0){
+                if (kb.IsKeyDown(Keys.Space) && old.IsKeyUp(Keys.Space) && timeForPlayers[0] == 0 && playerXLocs.Length >= 1)
+                {
                     int[,] bulletLocation = new int[,] { {playerXLocs[0]+19,570} };
                     bulletLocations.Add(bulletLocation);
                     //The wait time before being able to fire again
                     timeForPlayers[0] = 20;
                 }
                 //If right shift is pressed a bullet is fired for player two
-                if (kb.IsKeyDown(Keys.RightShift) && old.IsKeyUp(Keys.RightShift) && timeForPlayers[1] == 0)
+                if (kb.IsKeyDown(Keys.RightShift) && old.IsKeyUp(Keys.RightShift) && timeForPlayers[1] == 0 && playerXLocs.Length >= 2)
                 {
                     int[,] bulletLocation = new int[,] { { playerXLocs[1] + 19, 570 } };
                     bulletLocations.Add(bulletLocation);
