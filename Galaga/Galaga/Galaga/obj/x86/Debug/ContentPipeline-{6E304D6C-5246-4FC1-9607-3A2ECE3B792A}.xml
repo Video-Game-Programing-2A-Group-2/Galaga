@@ -29,15 +29,6 @@
       <Time>2021-01-11T09:19:09.0103731-08:00</Time>
     </Item>
     <Item>
-      <Source>HomePlayerSelection.spritefont</Source>
-      <Name>HomePlayerSelection</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\HomePlayerSelection.xnb</Output>
-      <Time>2021-01-11T09:19:09.009378-08:00</Time>
-    </Item>
-    <Item>
       <Source>spaceship.png</Source>
       <Name>spaceship</Name>
       <Importer>TextureImporter</Importer>
@@ -62,7 +53,103 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\bullet.xnb</Output>
-      <Time>2021-01-11T13:38:07.8989082-08:00</Time>
+      <Time>2021-01-11T18:28:17.449729-08:00</Time>
+    </Item>
+    <Item>
+      <Source>BeeGalaga.png</Source>
+      <Name>BeeGalaga</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\BeeGalaga.xnb</Output>
+      <Time>2021-01-15T17:18:30.222955-08:00</Time>
+    </Item>
+    <Item>
+      <Source>BossGalaga.png</Source>
+      <Name>BossGalaga</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\BossGalaga.xnb</Output>
+      <Time>2021-01-15T17:18:30.2239519-08:00</Time>
+    </Item>
+    <Item>
+      <Source>RedGalaga.png</Source>
+      <Name>RedGalaga</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\RedGalaga.xnb</Output>
+      <Time>2021-01-15T17:18:30.2259463-08:00</Time>
+    </Item>
+    <Item>
+      <Source>HomePlayerSelection.spritefont</Source>
+      <Name>HomePlayerSelection</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\HomePlayerSelection.xnb</Output>
+      <Time>2021-01-11T09:19:09.009378-08:00</Time>
+    </Item>
+    <Item>
+      <Source>01 Stage Intro.mp3</Source>
+      <Name>01 Stage Intro</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\01 Stage Intro.xnb</Output>
+      <Extra>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\01 Stage Intro.wma</Extra>
+      <Time>2021-01-15T17:18:30.2069979-08:00</Time>
+    </Item>
+    <Item>
+      <Source>02 Fighter Captured.mp3</Source>
+      <Name>02 Fighter Captured</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\02 Fighter Captured.xnb</Output>
+      <Extra>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\02 Fighter Captured.wma</Extra>
+      <Time>2021-01-15T17:18:30.2099899-08:00</Time>
+    </Item>
+    <Item>
+      <Source>03 Fighter Rescued.mp3</Source>
+      <Name>03 Fighter Rescued</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\03 Fighter Rescued.xnb</Output>
+      <Extra>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\03 Fighter Rescued.wma</Extra>
+      <Time>2021-01-15T17:18:30.2149758-08:00</Time>
+    </Item>
+    <Item>
+      <Source>04 Captured Fighter Destroyed.mp3</Source>
+      <Name>04 Captured Fighter Destroyed</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\04 Captured Fighter Destroyed.xnb</Output>
+      <Extra>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\04 Captured Fighter Destroyed.wma</Extra>
+      <Time>2021-01-15T17:18:30.217969-08:00</Time>
+    </Item>
+    <Item>
+      <Source>08 1-Up.mp3</Source>
+      <Name>08 1-Up</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\08 1-Up.xnb</Output>
+      <Extra>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\08 1-Up.wma</Extra>
+      <Time>2021-01-15T17:18:30.2199624-08:00</Time>
+    </Item>
+    <Item>
+      <Source>09 Die-Start Up Sound.mp3</Source>
+      <Name>09 Die-Start Up Sound</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\09 Die-Start Up Sound.xnb</Output>
+      <Extra>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\09 Die-Start Up Sound.wma</Extra>
+      <Time>2021-01-15T17:18:30.222955-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
