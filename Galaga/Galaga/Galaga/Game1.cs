@@ -275,7 +275,7 @@ namespace Galaga
                     arrow.Y = (int)arrowPos.Y;
             }
             //Pressing enter starts the game
-            if (kb.IsKeyDown(Keys.Enter) && !old.IsKeyDown(Keys.Enter))
+            if (kb.IsKeyDown(Keys.Enter) && !old.IsKeyDown(Keys.Enter) && playerXLocs == null)
             {
                 homeScreen = false;
                 if (arrow.Y == arrowPos.Y)
