@@ -546,7 +546,7 @@ namespace Galaga
                     spriteBatch.Draw(tempShipTexture, shipRectangle, Color.White);
                     for(int i = 0; i < shipsLeft; i++)
                     {
-                        spriteBatch.Draw(tempShipTexture, new Rectangle(350 + (50*i), 10, 40, 40), Color.White);
+                        //spriteBatch.Draw(tempShipTexture, new Rectangle(10 + (50*i), 600, 40, 40), Color.White);
                     }
                 }
                 //For each bullet,create a rectangle and draw it
