@@ -53,9 +53,16 @@ namespace Galaga
         int shipsLeft = 2;
 
         //current enemy spawn and lokation
+        
         List<Rectangle> BossRec = new List<Rectangle>();
         List<Rectangle> RedRec = new List<Rectangle>();
         List<Rectangle> BeeRec = new List<Rectangle>();
+
+        List<Rectangle> EnemyRec = new List<Rectangle>();
+
+        List<int[,]> enemyBull = new List<int[,]>();
+
+        Rectangle temprec;
 
         Rectangle recbg1, recbg2, recbg3, recbg4;
         Texture2D texbg;
@@ -68,6 +75,9 @@ namespace Galaga
         private bool expand;
         private double x1, x2, x3, x4, x5;
         private double y1, y2, y3, y4, y5;
+        int randET;
+
+        Random gen = new Random();
 
 
         Song intro;
@@ -105,8 +115,6 @@ namespace Galaga
             highscore = false;
             old = Keyboard.GetState();
 
-
-            
             BossRec.Add(recbg1 = new Rectangle(208, 50, 16, 16));
             BossRec.Add(recbg2 = new Rectangle(224, 50, 16, 16));
             BossRec.Add(recbg3 = new Rectangle(240, 50, 16, 16));
@@ -166,6 +174,8 @@ namespace Galaga
             y3 = 0;
             y4 = 0;
             y5 = 0;
+
+            randET = 0;
 
             LoadContent();
             MediaPlayer.Play(intro);
@@ -375,134 +385,384 @@ namespace Galaga
 
 
             //enemy spawn and movement
-            timer++;
-            if (timer >= 240.0){timer = 0;}
-            if (timer < 120.0){expand = true;}
-            else{expand = false;}
-            if (timer % 2.5 == 0 && expand){
-                x1 += .125;
-                x2 += .25;
-                x3 += .5;
-                x4 += 1;
-                x5 += 2;
+            if(homeScreen == false)
+            {
+                timer++;
+                if (timer >= 240.0) { timer = 0; }
+                if (timer < 120.0) { expand = true; }
+                else { expand = false; }
+                if (timer % 2.5 == 0 && expand)
+                {
+                    x1 += .125;
+                    x2 += .25;
+                    x3 += .5;
+                    x4 += 1;
+                    x5 += 2;
 
-                y1 += .125;
-                y2 += .25;
-                y3 += .5;
-                y4 += 1;
-                y5 += 2;
-            }
-            else if (timer % 2.5 == 0 && expand == false){
-                x1 -= .125;
-                x2 -= .25;
-                x3 -= .5;
-                x4 -= 1;
-                x5 -= 2;
+                    y1 += .125;
+                    y2 += .25;
+                    y3 += .5;
+                    y4 += 1;
+                    y5 += 2;
+                }
+                else if (timer % 2.5 == 0 && expand == false)
+                {
+                    x1 -= .125;
+                    x2 -= .25;
+                    x3 -= .5;
+                    x4 -= 1;
+                    x5 -= 2;
 
-                y1 -= .125;
-                y2 -= .25;
-                y3 -= .5;
-                y4 -= 1;
-                y5 -= 2;
-            }
-            if (timer % 40 == 0){
-                recbg1.X = 208 - (int)x2;
-                recbg2.X = 224 - (int)x1;
-                recbg3.X = 240 + (int)x1;
-                recbg4.X = 256 + (int)x2;
+                    y1 -= .125;
+                    y2 -= .25;
+                    y3 -= .5;
+                    y4 -= 1;
+                    y5 -= 2;
+                }
 
-                recbg1.Y = 50 + (int)y1;
-                recbg2.Y = 50 + (int)y1;
-                recbg3.Y = 50 + (int)y1;
-                recbg4.Y = 50 + (int)y1;
-            }
-            if (timer % 20 == 0){
-                recrg1.X = 176 - (int)x4;
-                recrg2.X = 192 - (int)x3;
-                recrg3.X = 208 - (int)x2;
-                recrg4.X = 224 - (int)x1;
-                recrg5.X = 240 + (int)x1;
-                recrg6.X = 256 + (int)x2;
-                recrg7.X = 272 + (int)x3;
-                recrg8.X = 288 + (int)x4;
+                if (timer % 40 == 0)
+                {
 
-                recrg1.Y = 66 + (int)y2;
-                recrg2.Y = 66 + (int)y2;
-                recrg3.Y = 66 + (int)y2;
-                recrg4.Y = 66 + (int)y2;
-                recrg5.Y = 66 + (int)y2;
-                recrg6.Y = 66 + (int)y2;
-                recrg7.Y = 66 + (int)y2;
-                recrg8.Y = 66 + (int)y2;
-            }
-            if (timer % 10 == 0){
-                recrg9.X = 176 - (int)x4;
-                recrg10.X = 192 - (int)x3;
-                recrg11.X = 208 - (int)x2;
-                recrg12.X = 224 - (int)x1;
-                recrg13.X = 240 + (int)x1;
-                recrg14.X = 256 + (int)x2;
-                recrg15.X = 272 + (int)x3;
-                recrg16.X = 288 + (int)x4;
+                    temprec = BossRec[0];
+                    temprec.X = 208 - (int)x2;
+                    BossRec[0] = temprec;
+                    temprec = BossRec[1];
+                    temprec.X = 224 - (int)x1;
+                    BossRec[1] = temprec;
+                    temprec = BossRec[2];
+                    temprec.X = 240 + (int)x1;
+                    BossRec[2] = temprec;
+                    temprec = BossRec[3];
+                    temprec.X = 256 + (int)x2;
+                    BossRec[3] = temprec;
 
-                recrg9.Y = 82 + (int)y3;
-                recrg10.Y = 82 + (int)y3;
-                recrg11.Y = 82 + (int)y3;
-                recrg12.Y = 82 + (int)y3;
-                recrg13.Y = 82 + (int)y3;
-                recrg14.Y = 82 + (int)y3;
-                recrg15.Y = 82 + (int)y3;
-                recrg16.Y = 82 + (int)y3;
-            }
-            if (timer % 5 == 0){
-                recbeg1.X = 160 - (int)x5;
-                recbeg2.X = 176 - (int)x4;
-                recbeg3.X = 192 - (int)x3;
-                recbeg4.X = 208 - (int)x2;
-                recbeg5.X = 224 - (int)x1;
-                recbeg6.X = 240 + (int)x1;
-                recbeg7.X = 256 + (int)x2;
-                recbeg8.X = 272 + (int)x3;
-                recbeg9.X = 288 + (int)x4;
-                recbeg10.X = 304 + (int)x5;
+                    temprec = BossRec[0];
+                    temprec.Y = 50 + (int)y1;
+                    temprec = BossRec[1];
+                    temprec.Y = 50 + (int)y1;
+                    temprec = BossRec[2];
+                    temprec.Y = 50 + (int)y1;
+                    temprec = BossRec[3];
+                    temprec.Y = 50 + (int)y1;
+                }
+                if (timer % 20 == 0)
+                {
+                    temprec = RedRec[0];
+                    temprec.X = 176 - (int)x4;
+                    RedRec[0] = temprec;
+                    temprec = RedRec[1];
+                    temprec.X = 192 - (int)x3;
+                    RedRec[1] = temprec;
+                    temprec = RedRec[2];
+                    temprec.X = 208 - (int)x2;
+                    RedRec[2] = temprec;
+                    temprec = RedRec[3];
+                    temprec.X = 224 - (int)x1;
+                    RedRec[3] = temprec;
+                    temprec = RedRec[4];
+                    temprec.X = 240 + (int)x1;
+                    RedRec[4] = temprec;
+                    temprec = RedRec[5];
+                    temprec.X = 256 + (int)x2;
+                    RedRec[5] = temprec;
+                    temprec = RedRec[6];
+                    temprec.X = 272 + (int)x3;
+                    RedRec[6] = temprec;
+                    temprec = RedRec[7];
+                    temprec.X = 288 + (int)x4;
+                    RedRec[7] = temprec;
 
-                recbeg1.Y = 98 + (int)y4;
-                recbeg2.Y = 98 + (int)y4;
-                recbeg3.Y = 98 + (int)y4;
-                recbeg4.Y = 98 + (int)y4;
-                recbeg5.Y = 98 + (int)y4;
-                recbeg6.Y = 98 + (int)y4;
-                recbeg7.Y = 98 + (int)y4;
-                recbeg8.Y = 98 + (int)y4;
-                recbeg9.Y = 98 + (int)y4;
-                recbeg10.Y = 98 + (int)y4;
-            }
-            if (timer % 2.5 == 0){
-                recbeg11.X = 160 - (int)x5;
-                recbeg12.X = 176 - (int)x4;
-                recbeg13.X = 192 - (int)x3;
-                recbeg14.X = 208 - (int)x2;
-                recbeg15.X = 224 - (int)x1;
-                recbeg16.X = 240 + (int)x1;
-                recbeg17.X = 256 + (int)x2;
-                recbeg18.X = 272 + (int)x3;
-                recbeg19.X = 288 + (int)x4;
-                recbeg20.X = 304 + (int)x5;
+                    temprec = RedRec[0];
+                    temprec.Y = 66 + (int)y2;
+                    RedRec[0] = temprec;
+                    temprec = RedRec[1];
+                    temprec.Y = 66 + (int)y2;
+                    RedRec[1] = temprec;
+                    temprec = RedRec[2];
+                    temprec.Y = 66 + (int)y2;
+                    RedRec[2] = temprec;
+                    temprec = RedRec[3];
+                    temprec.Y = 66 + (int)y2;
+                    RedRec[3] = temprec;
+                    temprec = RedRec[4];
+                    temprec.Y = 66 + (int)y2;
+                    RedRec[4] = temprec;
+                    temprec = RedRec[5];
+                    temprec.Y = 66 + (int)y2;
+                    RedRec[5] = temprec;
+                    temprec = RedRec[6];
+                    temprec.Y = 66 + (int)y2;
+                    RedRec[6] = temprec;
+                    temprec = RedRec[7];
+                    temprec.Y = 66 + (int)y2;
+                    RedRec[7] = temprec;
+                }
+                if (timer % 10 == 0)
+                {
+                    temprec = RedRec[8];
+                    temprec.X = 176 - (int)x4;
+                    RedRec[8] = temprec;
+                    temprec = RedRec[9];
+                    temprec.X = 192 - (int)x3;
+                    RedRec[9] = temprec;
+                    temprec = RedRec[10];
+                    temprec.X = 208 - (int)x2;
+                    RedRec[10] = temprec;
+                    temprec = RedRec[11];
+                    temprec.X = 224 - (int)x1;
+                    RedRec[11] = temprec;
+                    temprec = RedRec[12];
+                    temprec.X = 240 + (int)x1;
+                    RedRec[12] = temprec;
+                    temprec = RedRec[13];
+                    temprec.X = 256 + (int)x2;
+                    RedRec[13] = temprec;
+                    temprec = RedRec[14];
+                    temprec.X = 272 + (int)x3;
+                    RedRec[14] = temprec;
+                    temprec = RedRec[15];
+                    temprec.X = 288 + (int)x4;
+                    RedRec[15] = temprec;
 
-                recbeg11.Y = 114 + (int)y5;
-                recbeg12.Y = 114 + (int)y5;
-                recbeg13.Y = 114 + (int)y5;
-                recbeg14.Y = 114 + (int)y5;
-                recbeg15.Y = 114 + (int)y5;
-                recbeg16.Y = 114 + (int)y5;
-                recbeg17.Y = 114 + (int)y5;
-                recbeg18.Y = 114 + (int)y5;
-                recbeg19.Y = 114 + (int)y5;
-                recbeg20.Y = 114 + (int)y5;
+                    temprec = RedRec[8];
+                    temprec.Y = 82 + (int)y3;
+                    RedRec[8] = temprec;
+                    temprec = RedRec[9];
+                    temprec.Y = 82 + (int)y3;
+                    RedRec[9] = temprec;
+                    temprec = RedRec[10];
+                    temprec.Y = 82 + (int)y3;
+                    RedRec[10] = temprec;
+                    temprec = RedRec[11];
+                    temprec.Y = 82 + (int)y3;
+                    RedRec[11] = temprec;
+                    temprec = RedRec[12];
+                    temprec.Y = 82 + (int)y3;
+                    RedRec[12] = temprec;
+                    temprec = RedRec[13];
+                    temprec.Y = 82 + (int)y3;
+                    RedRec[13] = temprec;
+                    temprec = RedRec[14];
+                    temprec.Y = 82 + (int)y3;
+                    RedRec[14] = temprec;
+                    temprec = RedRec[15];
+                    temprec.Y = 82 + (int)y3;
+                    RedRec[15] = temprec;
+                }
+                if (timer % 5 == 0)
+                {
+                    temprec = BeeRec[0];
+                    temprec.X = 160 - (int)x5;
+                    BeeRec[0] = temprec;
+                    temprec = BeeRec[1];
+                    temprec.X = 176 - (int)x4;
+                    BeeRec[1] = temprec;
+                    temprec = BeeRec[2];
+                    temprec.X = 192 - (int)x3;
+                    BeeRec[2] = temprec;
+                    temprec = BeeRec[3];
+                    temprec.X = 208 - (int)x2;
+                    BeeRec[3] = temprec;
+                    temprec = BeeRec[4];
+                    temprec.X = 224 - (int)x1;
+                    BeeRec[4] = temprec;
+                    temprec = BeeRec[5];
+                    temprec.X = 240 + (int)x1;
+                    BeeRec[5] = temprec;
+                    temprec = BeeRec[6];
+                    temprec.X = 256 + (int)x2;
+                    BeeRec[6] = temprec;
+                    temprec = BeeRec[7];
+                    temprec.X = 272 + (int)x3;
+                    BeeRec[7] = temprec;
+                    temprec = BeeRec[8];
+                    temprec.X = 288 + (int)x4;
+                    BeeRec[8] = temprec;
+                    temprec = BeeRec[9];
+                    temprec.X = 304 + (int)x5;
+                    BeeRec[9] = temprec;
+
+                    temprec = BeeRec[0];
+                    temprec.Y = 98 + (int)y4;
+                    BeeRec[0] = temprec;
+                    temprec = BeeRec[1];
+                    temprec.Y = 98 + (int)y4;
+                    BeeRec[1] = temprec;
+                    temprec = BeeRec[2];
+                    temprec.Y = 98 + (int)y4;
+                    BeeRec[2] = temprec;
+                    temprec = BeeRec[3];
+                    temprec.Y = 98 + (int)y4;
+                    BeeRec[3] = temprec;
+                    temprec = BeeRec[4];
+                    temprec.Y = 98 + (int)y4;
+                    BeeRec[4] = temprec;
+                    temprec = BeeRec[5];
+                    temprec.Y = 98 + (int)y4;
+                    BeeRec[5] = temprec;
+                    temprec = BeeRec[6];
+                    temprec.Y = 98 + (int)y4;
+                    BeeRec[6] = temprec;
+                    temprec = BeeRec[7];
+                    temprec.Y = 98 + (int)y4;
+                    BeeRec[7] = temprec;
+                    temprec = BeeRec[8];
+                    temprec.Y = 98 + (int)y4;
+                    BeeRec[8] = temprec;
+                    temprec = BeeRec[9];
+                    temprec.Y = 98 + (int)y4;
+                    BeeRec[9] = temprec;
+                }
+                if (timer % 2.5 == 0)
+                {
+                    temprec = BeeRec[10];
+                    temprec.X = 160 - (int)x5;
+                    BeeRec[10] = temprec;
+                    temprec = BeeRec[11];
+                    temprec.X = 176 - (int)x4;
+                    BeeRec[11] = temprec;
+                    temprec = BeeRec[12];
+                    temprec.X = 192 - (int)x3;
+                    BeeRec[12] = temprec;
+                    temprec = BeeRec[13];
+                    temprec.X = 208 - (int)x2;
+                    BeeRec[13] = temprec;
+                    temprec = BeeRec[14];
+                    temprec.X = 224 - (int)x1;
+                    BeeRec[14] = temprec;
+                    temprec = BeeRec[15];
+                    temprec.X = 240 + (int)x1;
+                    BeeRec[15] = temprec;
+                    temprec = BeeRec[16];
+                    temprec.X = 256 + (int)x2;
+                    BeeRec[16] = temprec;
+                    temprec = BeeRec[17];
+                    temprec.X = 272 + (int)x3;
+                    BeeRec[17] = temprec;
+                    temprec = BeeRec[18];
+                    temprec.X = 288 + (int)x4;
+                    BeeRec[18] = temprec;
+                    temprec = BeeRec[19];
+                    temprec.X = 304 + (int)x5;
+                    BeeRec[19] = temprec;
+
+                    temprec = BeeRec[10];
+                    temprec.Y = 114 + (int)y5;
+                    BeeRec[10] = temprec;
+                    temprec = BeeRec[11];
+                    temprec.Y = 114 + (int)y5;
+                    BeeRec[11] = temprec;
+                    temprec = BeeRec[12];
+                    temprec.Y = 114 + (int)y5;
+                    BeeRec[12] = temprec;
+                    temprec = BeeRec[13];
+                    temprec.Y = 114 + (int)y5;
+                    BeeRec[13] = temprec;
+                    temprec = BeeRec[14];
+                    temprec.Y = 114 + (int)y5;
+                    BeeRec[14] = temprec;
+                    temprec = BeeRec[15];
+                    temprec.Y = 114 + (int)y5;
+                    BeeRec[15] = temprec;
+                    temprec = BeeRec[16];
+                    temprec.Y = 114 + (int)y5;
+                    BeeRec[16] = temprec;
+                    temprec = BeeRec[17];
+                    temprec.Y = 114 + (int)y5;
+                    BeeRec[17] = temprec;
+                    temprec = BeeRec[18];
+                    temprec.Y = 114 + (int)y5;
+                    BeeRec[18] = temprec;
+                    temprec = BeeRec[19];
+                    temprec.Y = 114 + (int)y5;
+                    BeeRec[19] = temprec;
+                }
             }
+            
+
+
+            //Enemy Shooting
+            //if (timer % 2 == 0)
+            //{
+            //    randET = gen.Next(2);
+            //    if (randET == 0)
+            //    {
+            //        randET = gen.Next(3);
+            //        temprec = BossRec[randET];
+            //        int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
+            //        enemyBull.Add(enemyB);
+
+            //    }
+            //    else if (randET == 1)
+            //    {
+            //        randET = gen.Next(15);
+            //        temprec = RedRec[randET];
+            //        int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
+            //        enemyBull.Add(enemyB);
+            //    }
+            //    else
+            //    {
+            //        randET = gen.Next(19);
+            //        temprec = BeeRec[randET];
+            //        int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
+            //        enemyBull.Add(enemyB);
+            //    }
+            //}
+
+            ////Removes any bullets that are out of the bounds
+            //for (int x = 0; x < enemyBull.Count(); x++)
+            //{
+            //    int[,] bulletCoords = enemyBull.ElementAt<int[,]>(x);
+            //    if (bulletCoords[0, 0] > 480 || bulletCoords[0, 0] < -12 || bulletCoords[0, 1] > 640 || bulletCoords[0, 1] < -24) { enemyBull.RemoveAt(x); }
+            //    Rectangle tempRecangle = new Rectangle(bulletCoords[0, 0], bulletCoords[0, 1], 12, 24);
+            //    for (int i = 0; i < RedRec.Count; i++)
+            //    {
+            //        if (tempRecangle.Intersects(RedRec.ElementAt(i)))
+            //        {
+            //            enemyBull.RemoveAt(x);
+            //            RedRec.RemoveAt(i);
+            //            score += 200;
+            //            break;
+            //        }
+            //    }
+            //    for (int i = 0; i < BeeRec.Count; i++)
+            //    {
+            //        if (tempRecangle.Intersects(BeeRec.ElementAt(i)))
+            //        {
+            //            enemyBull.RemoveAt(x);
+            //            BeeRec.RemoveAt(i);
+            //            score += 100;
+            //            break;
+            //        }
+            //    }
+            //    for (int i = 0; i < BossRec.Count; i++)
+            //    {
+            //        if (tempRecangle.Intersects(BossRec.ElementAt(i)))
+            //        {
+            //            enemyBull.RemoveAt(x);
+            //            BossRec.RemoveAt(i);
+            //            score += 1000;
+            //            break;
+            //        }
+            //    }
+
+
+
+            //}
+            ////Moves each bullet up
+            //foreach (int[,] bulletCoord in enemyBull)
+            //{
+            //    bulletCoord[0, 1] += 7;
+            //}
+            //old = kb;
+
+
+
 
             base.Update(gameTime);
         }
+
+
 
         /// <summary>
         /// This is called when the game should draw itself.
@@ -554,6 +814,9 @@ namespace Galaga
                     Rectangle tempRecangle = new Rectangle(bulletCoords[0, 0], bulletCoords[0, 1], 12, 24);
                     spriteBatch.Draw(bulletTexture,tempRecangle,Color.White);
                 }
+
+                //Enemies
+                //boss galaga
                 for (int i = 0; i < BossRec.Count(); i++) { spriteBatch.Draw(texbg, BossRec[i], Color.White); }
                 //red galaga
                 for (int i = 0; i < RedRec.Count(); i++) { spriteBatch.Draw(texrg, RedRec[i], Color.White); }
@@ -561,8 +824,7 @@ namespace Galaga
                 for (int i = 0; i < BeeRec.Count; i++) { spriteBatch.Draw(texbeg, BeeRec[i], Color.White); }
             }
 
-            //Enemies
-            //boss galaga
+            
            
 
 
