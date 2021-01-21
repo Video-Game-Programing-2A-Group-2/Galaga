@@ -52,10 +52,12 @@ namespace Galaga
 
         int shipsLeft = 2;
 
+        //Stores info about each enemy
+        List<Object> enemyInfo = new List<Object>();
         //current enemy spawn and lokation
-        List<Rectangle> BossRec = new List<Rectangle>();
-        List<Rectangle> RedRec = new List<Rectangle>();
-        List<Rectangle> BeeRec = new List<Rectangle>();
+        //List<Rectangle> BossRec = new List<Rectangle>();
+        //List<Rectangle> RedRec = new List<Rectangle>();
+        //List<Rectangle> BeeRec = new List<Rectangle>();
 
         Rectangle recbg1, recbg2, recbg3, recbg4;
         Texture2D texbg;
@@ -87,7 +89,7 @@ namespace Galaga
 
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
+        /// This is where it can query for any required services and load` any non-graphic
         /// related content.  Calling base.Initialize will enumerate through any components
         /// and initialize them as well.
         /// </summary>
@@ -95,6 +97,18 @@ namespace Galaga
         {
             // TODO: Add your initialization logic here
             //Initialize all the variables
+
+            //Create 8 of each enemy type
+            for (int y = 0; y < 3; y++) {
+                for (int x=0;x<8;x++) {
+                    List<Object> enemyInfo = new List<Object>();
+                    enemyInfo.Add(new Rectangle(x*40+90,y*30+45,25,25)); 
+                    enemyInfo.Add(y);
+                    this.enemyInfo.Add(enemyInfo);
+                }
+            }
+
+
             background = new Rectangle(0,0,GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             name = new Rectangle(GraphicsDevice.Viewport.Width/2 - 160, 100,320,179);
             arrow = new Rectangle(name.X+50,name.Y+200,25,25);
@@ -107,7 +121,7 @@ namespace Galaga
 
 
             
-            BossRec.Add(recbg1 = new Rectangle(208, 50, 16, 16));
+            /*BossRec.Add(recbg1 = new Rectangle(208, 50, 16, 16));
             BossRec.Add(recbg2 = new Rectangle(224, 50, 16, 16));
             BossRec.Add(recbg3 = new Rectangle(240, 50, 16, 16));
             BossRec.Add(recbg4 = new Rectangle(256, 50, 16, 16));
@@ -148,7 +162,7 @@ namespace Galaga
             BeeRec.Add(recbeg17 = new Rectangle(256, 114, 16, 16));
             BeeRec.Add(recbeg18 = new Rectangle(272, 114, 16, 16));
             BeeRec.Add(recbeg19 = new Rectangle(288, 114, 16, 16));
-            BeeRec.Add(recbeg20 = new Rectangle(304, 114, 16, 16));
+            BeeRec.Add(recbeg20 = new Rectangle(304, 114, 16, 16));*/
 
             timer = 0;
             seconds = 0;
@@ -326,13 +340,27 @@ namespace Galaga
                 }
                 
             }
-            //Removes any bullets that are out of the bounds
+            //Loop through all the bullets
             for (int x=0;x<bulletLocations.Count();x++)
             {
+                //BulletCoords is a array with the x and y coord of the current bullet
                 int[,] bulletCoords = bulletLocations.ElementAt<int[,]>(x);
-                if (bulletCoords[0,0] > 480 || bulletCoords[0,0] < -12 || bulletCoords[0,1] > 640 || bulletCoords[0,1] < -24) { bulletLocations.RemoveAt(x); }
+                //Remove the bullet if it goes off screen
+                if (bulletCoords[0, 0] > 480 || bulletCoords[0, 0] < -12 || bulletCoords[0, 1] > 640 || bulletCoords[0, 1] < -24) { bulletLocations.RemoveAt(x); }
+                //Check if a bullet collides with a enemy,and delete the bullet and enemy if it does
                 Rectangle tempRecangle = new Rectangle(bulletCoords[0, 0], bulletCoords[0, 1], 12, 24);
-                for(int i = 0; i < RedRec.Count;i++)
+                for (int i=0;i<enemyInfo.Count;i++) {
+                    List<Object> enemyList = (List<Object>)enemyInfo.ElementAt<Object>(i);
+                    Rectangle tempEnemyRectangle = (Rectangle)enemyList.ElementAt<Object>(0);
+                    if (tempRecangle.Intersects(tempEnemyRectangle)) {
+                        bulletLocations.RemoveAt(x);
+                        enemyInfo.RemoveAt(i);
+                        int tempAlienType = (int)enemyList.ElementAt<Object>(1);
+                        //Award a different amount of points based on which enemy type was killed
+                        score += tempAlienType == 0 ? 1000 : tempAlienType == 1?200:100;
+                    }
+                }
+               /* for(int i = 0; i < RedRec.Count;i++)
                 {
                     if(tempRecangle.Intersects(RedRec.ElementAt(i)))
                     {
@@ -361,10 +389,7 @@ namespace Galaga
                         score += 1000;
                         break;
                     }
-                }
-
-
-
+                }*/
             }
             //Moves each bullet up
             foreach (int[,] bulletCoord in bulletLocations) {
@@ -554,11 +579,23 @@ namespace Galaga
                     Rectangle tempRecangle = new Rectangle(bulletCoords[0, 0], bulletCoords[0, 1], 12, 24);
                     spriteBatch.Draw(bulletTexture,tempRecangle,Color.White);
                 }
-                for (int i = 0; i < BossRec.Count(); i++) { spriteBatch.Draw(texbg, BossRec[i], Color.White); }
+                //Draw all the enemies
+                for (int i=0;i<enemyInfo.Count();i++) {
+                    //Get details about the enemy(location,texture)
+                    List<Object> enemyDetails = (List<Object>)enemyInfo.ElementAt<Object>(i);
+                    //Create a temporary rectangle for the enemy
+                    Rectangle tempEnemyRectangle = (Rectangle)enemyDetails.ElementAt<Object>(0);
+                    //Get the number which represents the texture
+                    int textureInt = (int)enemyDetails.ElementAt<Object>(1);
+                    //Sets the texture from the info given
+                    Texture2D tempEnemyTexture = textureInt == 0 ? texbg : textureInt == 1 ? texrg : texbeg;
+                    spriteBatch.Draw(tempEnemyTexture,tempEnemyRectangle,Color.White);
+                }
+                /*for (int i = 0; i < BossRec.Count(); i++) { spriteBatch.Draw(texbg, BossRec[i], Color.White); }
                 //red galaga
                 for (int i = 0; i < RedRec.Count(); i++) { spriteBatch.Draw(texrg, RedRec[i], Color.White); }
                 //bee galaga
-                for (int i = 0; i < BeeRec.Count; i++) { spriteBatch.Draw(texbeg, BeeRec[i], Color.White); }
+                for (int i = 0; i < BeeRec.Count; i++) { spriteBatch.Draw(texbeg, BeeRec[i], Color.White); }*/
             }
 
             //Enemies
