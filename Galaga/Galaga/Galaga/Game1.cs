@@ -181,7 +181,7 @@ namespace Galaga
             old = Keyboard.GetState();
 
             //Add Given enemies to Screen
-            
+
 
             for (int i = 0; i < 4; i++) { brB.Add(true); }
             for (int i = 0; i < 16; i++) { rrB.Add(true); }
@@ -216,7 +216,7 @@ namespace Galaga
         /// LoadContent will be called once per game and is the place to load
         /// all of your content.
         /// </summary>
-        /// 
+        ///
 
         void loadShips()
         {
@@ -263,7 +263,7 @@ namespace Galaga
             BeeRec.Add(recbeg19 = new Rectangle(288, 114, 16, 16));
             BeeRec.Add(recbeg20 = new Rectangle(304, 114, 16, 16));
         }
-        
+
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
@@ -298,7 +298,7 @@ namespace Galaga
         /// UnloadContent will be called once per game and is the place to unload
         /// all content.
         /// </summary>
-        /// 
+        ///
 
 
         private int ReadFileOfIntegers(string path)
@@ -311,7 +311,7 @@ namespace Galaga
                     while(!reader.EndOfStream)
                     {
                         line = reader.ReadLine();
-                        
+
                     }
                 }
             }
@@ -442,7 +442,7 @@ namespace Galaga
                     //The wait time before being able to fire again
                     timeForPlayers[1] = 20;
                 }
-                
+
             }
             //Loop through all the bullets
             for (int x=0;x<bulletLocations.Count();x++)
@@ -455,7 +455,7 @@ namespace Galaga
                 Rectangle tempRecangle = new Rectangle(bulletCoords[0, 0], bulletCoords[0, 1], 12, 24);
                 for (int i=0;i<enemyInfo.Count;i++) {
                     List<Object> enemyList = (List<Object>)enemyInfo.ElementAt<Object>(i);
-                   
+
                 }
                 //red enemy
                 for (int i = 0; i < RedRec.Count; i++)
@@ -491,11 +491,11 @@ namespace Galaga
                         score += 1000;
                         lifeMultiple += 1000;
                         brB[i] = false;
-                        
+
                         break;
                     }
                 }
-              
+
             }
             for(int b= 0;b<enemyBull.Count();b++)
             {
@@ -903,11 +903,11 @@ namespace Galaga
                     bulletCoord[0, 1] += 7;
                 }
             }
-            
+
             base.Update(gameTime);
 
         }
-          
+
 
 
 
@@ -923,6 +923,11 @@ namespace Galaga
             spriteBatch.Begin();
             spriteBatch.Draw(space,background,Color.White);
             spriteBatch.DrawString(homefont, "High Score: ", new Vector2(150, 10), Color.Red);
+            if (numOfPlayerLives == 0)
+            {
+                spriteBatch.DrawString(homefont, "You Died", new Vector2(200, 100), Color.White);
+                spriteBatch.DrawString(homefont, "Hit enter to return to the Main Menu", new Vector2(75, 300), Color.White);
+            }
             spriteBatch.DrawString(homefont, highscoreNum.ToString(), new Vector2(275, 10), Color.White);
             //Draws the home screen if the player hasn't started a game
             if (homeScreen && !gameOver)
@@ -930,7 +935,7 @@ namespace Galaga
                 spriteBatch.Draw(galagaNameArt, name, Color.White);
                 spriteBatch.Draw(pointer, arrow, Color.White);
                 spriteBatch.DrawString(homefont, "One Player", new Vector2(arrowPos.X + 50, arrowPos.Y), Color.White);
-                spriteBatch.DrawString(homefont, "Two Player", new Vector2(arrowPos.X + 50, arrowPos.Y + 50), Color.White); 
+                spriteBatch.DrawString(homefont, "Two Player", new Vector2(arrowPos.X + 50, arrowPos.Y + 50), Color.White);
             }
             //Otherwise draws the game
             else if(!homeScreen && !gameOver)
@@ -950,7 +955,7 @@ namespace Galaga
                     }
                     //Draw the ship
                     spriteBatch.Draw(tempShipTexture, shipRectangle, Color.White);
-                    for(int i = 0; i < shipsLeft; i++)
+                    for(int i = 0; i < numOfPlayerLives; i++)
                     {
                         spriteBatch.Draw(tempShipTexture, new Rectangle(375 + (25*i), 10, 20, 20), Color.White);
                     }
@@ -962,7 +967,7 @@ namespace Galaga
                 }
                 //Enemies
                 //boss galaga
-                
+
                 //Draw all the enemies
                 //Enemy bullet: create a rectangle and draw it
                 foreach (int[,] bulletCoords in enemyBull)

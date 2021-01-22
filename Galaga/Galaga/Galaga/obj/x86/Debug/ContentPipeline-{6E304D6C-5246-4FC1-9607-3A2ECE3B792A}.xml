@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\space.xnb</Output>
-      <Time>2021-01-07T11:37:40.4388611-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\space.xnb</Output>
+      <Time>2021-01-11T09:19:09.0183535-08:00</Time>
     </Item>
     <Item>
       <Source>galaga.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\galaga.xnb</Output>
-      <Time>2021-01-07T11:43:24.5006803-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\galaga.xnb</Output>
+      <Time>2021-01-11T09:19:09.0133673-08:00</Time>
     </Item>
     <Item>
       <Source>Pointer.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\Pointer.xnb</Output>
-      <Time>2021-01-07T11:53:21.0732347-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\Pointer.xnb</Output>
+      <Time>2021-01-11T09:19:09.0103731-08:00</Time>
     </Item>
     <Item>
       <Source>spaceship.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\spaceship.xnb</Output>
-      <Time>2021-01-22T09:43:27.731302-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\spaceship.xnb</Output>
+      <Time>2021-01-21T23:02:24.0225703-08:00</Time>
     </Item>
     <Item>
       <Source>spaceship2.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\spaceship2.xnb</Output>
-      <Time>2021-01-22T09:43:27.732262-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\spaceship2.xnb</Output>
+      <Time>2021-01-21T23:02:24.0245643-08:00</Time>
     </Item>
     <Item>
       <Source>bullet.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\bullet.xnb</Output>
-      <Time>2021-01-22T09:43:27.7262805-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\bullet.xnb</Output>
+      <Time>2021-01-21T23:02:24.0205759-08:00</Time>
     </Item>
     <Item>
       <Source>BeeGalaga.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\BeeGalaga.xnb</Output>
-      <Time>2021-01-21T14:26:38.8132092-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\BeeGalaga.xnb</Output>
+      <Time>2021-01-22T04:15:16.1430511-08:00</Time>
     </Item>
     <Item>
       <Source>BossGalaga.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\BossGalaga.xnb</Output>
-      <Time>2021-01-21T14:26:38.8142043-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\BossGalaga.xnb</Output>
+      <Time>2021-01-22T04:15:16.1440492-08:00</Time>
     </Item>
     <Item>
       <Source>RedGalaga.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\RedGalaga.xnb</Output>
-      <Time>2021-01-21T14:26:38.8161742-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\RedGalaga.xnb</Output>
+      <Time>2021-01-22T04:15:16.1450461-08:00</Time>
     </Item>
     <Item>
       <Source>eBullet.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\eBullet.xnb</Output>
-      <Time>2021-01-22T09:43:27.7272764-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\eBullet.xnb</Output>
+      <Time>2021-01-21T23:02:24.0216039-08:00</Time>
     </Item>
     <Item>
       <Source>HomePlayerSelection.spritefont</Source>
@@ -97,8 +97,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\HomePlayerSelection.xnb</Output>
-      <Time>2021-01-07T20:53:58.8276021-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\HomePlayerSelection.xnb</Output>
+      <Time>2021-01-11T09:19:09.009378-08:00</Time>
     </Item>
     <Item>
       <Source>01 Stage Intro.mp3</Source>
@@ -106,9 +106,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\01 Stage Intro.xnb</Output>
-      <Extra>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\01 Stage Intro.wma</Extra>
-      <Time>2021-01-14T23:04:04.1212852-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\01 Stage Intro.xnb</Output>
+      <Extra>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\01 Stage Intro.wma</Extra>
+      <Time>2021-01-15T17:20:15.1454253-08:00</Time>
     </Item>
     <Item>
       <Source>02 Fighter Captured.mp3</Source>
@@ -116,9 +116,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\02 Fighter Captured.xnb</Output>
-      <Extra>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\02 Fighter Captured.wma</Extra>
-      <Time>2021-01-14T23:04:04.1162979-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\02 Fighter Captured.xnb</Output>
+      <Extra>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\02 Fighter Captured.wma</Extra>
+      <Time>2021-01-15T17:20:15.14742-08:00</Time>
     </Item>
     <Item>
       <Source>03 Fighter Rescued.mp3</Source>
@@ -126,9 +126,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\03 Fighter Rescued.xnb</Output>
-      <Extra>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\03 Fighter Rescued.wma</Extra>
-      <Time>2021-01-14T23:04:04.1123084-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\03 Fighter Rescued.xnb</Output>
+      <Extra>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\03 Fighter Rescued.wma</Extra>
+      <Time>2021-01-15T17:20:15.150412-08:00</Time>
     </Item>
     <Item>
       <Source>04 Captured Fighter Destroyed.mp3</Source>
@@ -136,9 +136,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\04 Captured Fighter Destroyed.xnb</Output>
-      <Extra>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\04 Captured Fighter Destroyed.wma</Extra>
-      <Time>2021-01-14T23:04:04.1073221-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\04 Captured Fighter Destroyed.xnb</Output>
+      <Extra>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\04 Captured Fighter Destroyed.wma</Extra>
+      <Time>2021-01-15T17:20:15.1534041-08:00</Time>
     </Item>
     <Item>
       <Source>08 1-Up.mp3</Source>
@@ -146,9 +146,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\08 1-Up.xnb</Output>
-      <Extra>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\08 1-Up.wma</Extra>
-      <Time>2021-01-14T23:04:04.1023359-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\08 1-Up.xnb</Output>
+      <Extra>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\08 1-Up.wma</Extra>
+      <Time>2021-01-15T17:20:15.1553988-08:00</Time>
     </Item>
     <Item>
       <Source>09 Die-Start Up Sound.mp3</Source>
@@ -156,9 +156,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\09 Die-Start Up Sound.xnb</Output>
-      <Extra>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\09 Die-Start Up Sound.wma</Extra>
-      <Time>2021-01-14T23:04:04.0963514-06:00</Time>
+      <Output>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\09 Die-Start Up Sound.xnb</Output>
+      <Extra>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\09 Die-Start Up Sound.wma</Extra>
+      <Time>2021-01-15T17:20:15.1554464-08:00</Time>
     </Item>
     <Item>
       <Source>shoot.mp3</Source>
@@ -177,39 +177,39 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\GalagaContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\GalagaContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2011-09-01T16:22:30-05:00</Value>
+        <Value>2011-09-01T17:22:30-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2011-09-01T16:22:30-05:00</Value>
+        <Value>2011-09-01T17:22:30-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2011-09-01T16:22:30-05:00</Value>
+        <Value>2011-09-01T17:22:30-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2011-09-01T16:22:30-05:00</Value>
+        <Value>2011-09-01T17:22:30-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2011-09-01T16:22:30-05:00</Value>
+        <Value>2011-09-01T17:22:30-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2011-09-01T16:22:30-05:00</Value>
+        <Value>2011-09-01T17:22:30-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2020-08-13T11:33:33.7938883-05:00</Value>
+        <Value>2021-01-11T05:46:39.7180679-08:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
