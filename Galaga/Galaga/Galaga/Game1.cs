@@ -51,10 +51,13 @@ namespace Galaga
         int score = 0;
 
         int shipsLeft = 2;
+        int invincibilityTimer = 0;
 
+        //Stores number if lives
+        int numOfPlayerLives = 3;
         //Stores info about each enemy
         List<Object> enemyInfo = new List<Object>();
-        //current enemy spawn and lokation
+        //current enemy spawn and location
         
         List<Rectangle> BossRec = new List<Rectangle>();
         List<Rectangle> RedRec = new List<Rectangle>();
@@ -287,6 +290,7 @@ namespace Galaga
 
             // TODO: Add your update logic here
             //Down and up are used to switch between single player and two player
+            if (invincibilityTimer>0) { invincibilityTimer--; }
             if(kb.IsKeyDown(Keys.Down) && !old.IsKeyDown(Keys.Down))
             {
                 if (arrow.Y == arrowPos.Y)
@@ -378,18 +382,18 @@ namespace Galaga
                 Rectangle tempRecangle = new Rectangle(bulletCoords[0, 0], bulletCoords[0, 1], 12, 24);
                 for (int i=0;i<enemyInfo.Count;i++) {
                     List<Object> enemyList = (List<Object>)enemyInfo.ElementAt<Object>(i);
-                    Rectangle tempEnemyRectangle = (Rectangle)enemyList.ElementAt<Object>(0);
+                    /*Rectangle tempEnemyRectangle = (Rectangle)enemyList.ElementAt<Object>(0);
                     if (tempRecangle.Intersects(tempEnemyRectangle)) {
                         bulletLocations.RemoveAt(x);
                         enemyInfo.RemoveAt(i);
                         int tempAlienType = (int)enemyList.ElementAt<Object>(1);
                         //Award a different amount of points based on which enemy type was killed
                         score += tempAlienType == 0 ? 1000 : tempAlienType == 1?200:100;
-                    }
+                    }*/
                 }
                 for (int i = 0; i < RedRec.Count; i++)
                 {
-                    if (tempRecangle.Intersects(RedRec.ElementAt(i)))
+                    if (tempRecangle.Intersects(RedRec.ElementAt(i)) && rrB[i])
                     {
                         bulletLocations.RemoveAt(x);
                         score += 200;
@@ -399,7 +403,7 @@ namespace Galaga
                 }
                 for (int i = 0; i < BeeRec.Count; i++)
                 {
-                    if (tempRecangle.Intersects(BeeRec.ElementAt(i)))
+                    if (tempRecangle.Intersects(BeeRec.ElementAt(i)) && berB[i])
                     {
                         bulletLocations.RemoveAt(x);
                         score += 100;
@@ -409,12 +413,39 @@ namespace Galaga
                 }
                 for (int i = 0; i < BossRec.Count; i++)
                 {
-                    if (tempRecangle.Intersects(BossRec.ElementAt(i)))
+                    if (tempRecangle.Intersects(BossRec.ElementAt(i)) && brB[i])
                     {
                         bulletLocations.RemoveAt(x);
                         score += 1000;
                         brB[i] = false;
                         break;
+                    }
+                }
+                /* for (int i=0; i<enemyBull.Count();i++) {
+                     int[,] enemyBulletCoords = enemyBull.ElementAt<int[,]>(i);
+                     Rectangle enemyBulletRectangle = new Rectangle(enemyBulletCoords[0,0],enemyBulletCoords[0,1],12,24);
+                     for (int b=0;b<playerXLocs.Count();b++) {
+                         if (enemyBulletRectangle.Intersects(new Rectangle(playerXLocs[b],570,12,24))) {
+                             enemyBull.RemoveAt(i);
+                             numOfPlayerLives--;
+                         }
+                     }
+                 }*/
+            }
+            for(int b= 0;b<enemyBull.Count();b++)
+            {
+                int[,] enemyBullet = enemyBull.ElementAt<int[,]>(b);
+                Rectangle enemyRectangle = new Rectangle(enemyBullet[0, 0], enemyBullet[0, 1], 12, 24);
+                for (int i = 0; i < playerXLocs.GetLength(0); i++)
+                {
+                    Rectangle playerRectangle = new Rectangle(playerXLocs[i], 570, 50, 50);
+                    if (playerRectangle.Intersects(enemyRectangle))
+                    {
+                        enemyBull.Remove(enemyBullet);
+                        if (invincibilityTimer==0) {
+                            numOfPlayerLives--;
+                            invincibilityTimer = 60;
+                        }
                     }
                 }
             }
@@ -853,6 +884,7 @@ namespace Galaga
             //Otherwise draws the game
             else 
             {
+                spriteBatch.DrawString(homefont, "Lives: " + numOfPlayerLives, new Vector2(300, 10), Color.Red);
                 spriteBatch.DrawString(homefont, "Score: ", new Vector2(20, 10), Color.Red);
                 spriteBatch.DrawString(homefont, score .ToString(), new Vector2(100, 10), Color.White);
                 //For each player loop through once and draw ship
