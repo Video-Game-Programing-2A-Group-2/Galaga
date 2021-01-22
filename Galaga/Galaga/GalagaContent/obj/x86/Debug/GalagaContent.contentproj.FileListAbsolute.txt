@@ -1,2 +1,3 @@
 C:\Users\nihal\Documents\GitHub\Galaga\Galaga\Galaga\GalagaContent\obj\x86\Debug\GalagaContent.contentprojResolveAssemblyReference.cache
 C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\GalagaContent\obj\x86\Debug\GalagaContent.contentprojResolveAssemblyReference.cache
+C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\GalagaContent\obj\x86\Debug\GalagaContent.contentprojResolveAssemblyReference.cache
