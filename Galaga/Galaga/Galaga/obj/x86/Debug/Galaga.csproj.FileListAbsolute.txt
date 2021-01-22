@@ -117,26 +117,3 @@ C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\obj\x86\Debug\
 C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\eBullet.xnb
 C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\obj\x86\Debug\Galaga.csprojResolveAssemblyReference.cache
 C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\eBullet.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\space.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\galaga.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Pointer.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\spaceship.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\spaceship2.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\bullet.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\BeeGalaga.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\BossGalaga.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\RedGalaga.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\eBullet.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\HomePlayerSelection.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\01 Stage Intro.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\02 Fighter Captured.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\03 Fighter Rescued.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\04 Captured Fighter Destroyed.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\08 1-Up.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\09 Die-Start Up Sound.xnb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\01 Stage Intro.wma
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\02 Fighter Captured.wma
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\03 Fighter Rescued.wma
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\04 Captured Fighter Destroyed.wma
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\08 1-Up.wma
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\09 Die-Start Up Sound.wma
