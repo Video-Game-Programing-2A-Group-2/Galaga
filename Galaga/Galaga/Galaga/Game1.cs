@@ -887,7 +887,7 @@ namespace Galaga
             else 
             {
                 spriteBatch.DrawString(homefont, "Lives: " + numOfPlayerLives, new Vector2(300, 10), Color.Red);
-                spriteBatch.DrawString(homefont, "Score: ", new Vector2(20, 10), Color.Red);
+                spriteBatch.DrawString(homefont, "Scores: ", new Vector2(20, 10), Color.Red);
                 spriteBatch.DrawString(homefont, score .ToString(), new Vector2(100, 10), Color.White);
                 //For each player loop through once and draw ship
                 for (int x = 0; x < playerXLocs.GetLength(0); x++)
