@@ -151,6 +151,15 @@
       <Extra>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\09 Die-Start Up Sound.wma</Extra>
       <Time>2021-01-18T23:47:58.6278841-06:00</Time>
     </Item>
+    <Item>
+      <Source>eBullet.png</Source>
+      <Name>eBullet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\eBullet.xnb</Output>
+      <Time>2021-01-21T22:59:22.6738353-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{6E304D6C-5246-4FC1-9607-3A2ECE3B792A}</ContentProjectGUID>

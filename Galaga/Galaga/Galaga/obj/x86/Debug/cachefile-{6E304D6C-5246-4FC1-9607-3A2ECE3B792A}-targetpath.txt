@@ -20,4 +20,5 @@ Content\08 1-Up.xnb
 Content\08 1-Up.wma
 Content\09 Die-Start Up Sound.xnb
 Content\09 Die-Start Up Sound.wma
+Content\eBullet.xnb
 Content\high.txt

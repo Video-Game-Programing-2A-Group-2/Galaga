@@ -73,6 +73,8 @@ namespace Galaga
 
         Rectangle temprec;
 
+        Texture2D EnemyBullet;
+
         Rectangle recbg1, recbg2, recbg3, recbg4;
         Texture2D texbg;
         Rectangle recrg1, recrg2, recrg3, recrg4, recrg5, recrg6, recrg7, recrg8, recrg9, recrg10, recrg11, recrg12, recrg13, recrg14, recrg15, recrg16;
@@ -231,8 +233,10 @@ namespace Galaga
             texrg = this.Content.Load<Texture2D>("RedGalaga");
             texbeg = this.Content.Load<Texture2D>("BeeGalaga");
 
+            EnemyBullet = Content.Load<Texture2D>("eBullet");
+
             // TODO: use this.Content to load your game content here
-             intro = this.Content.Load<Song>("01 Stage Intro");
+            intro = this.Content.Load<Song>("01 Stage Intro");
              captured = this.Content.Load<Song>("02 FIghter Captured");
              rescued = this.Content.Load<Song>("03 Fighter Rescued");
              destroyed = this.Content.Load<Song>("04 Captured Fighter Destroyed");
@@ -715,89 +719,118 @@ namespace Galaga
                     temprec.Y = 114 + (int)y5;
                     BeeRec[19] = temprec;
                 }
+
+
+                //Enemy Shooting
+                if (timer % 120 == 0)
+                {
+
+                    //bullet 1
+                    randET = gen.Next(2);
+                    if (randET == 0)
+                    {
+                        randET = gen.Next(3);
+                        temprec = BossRec[randET];
+                        int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
+                        enemyBull.Add(enemyB);
+
+                    }
+                    else if (randET == 1)
+                    {
+                        randET = gen.Next(15);
+                        temprec = RedRec[randET];
+                        int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
+                        enemyBull.Add(enemyB);
+                    }
+                    else
+                    {
+                        randET = gen.Next(19);
+                        temprec = BeeRec[randET];
+                        int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
+                        enemyBull.Add(enemyB);
+                    }
+
+                    //bullet 2
+                    randET = gen.Next(2);
+                    if (randET == 0)
+                    {
+                        randET = gen.Next(3);
+                        temprec = BossRec[randET];
+                        int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
+                        enemyBull.Add(enemyB);
+
+                    }
+                    else if (randET == 1)
+                    {
+                        randET = gen.Next(15);
+                        temprec = RedRec[randET];
+                        int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
+                        enemyBull.Add(enemyB);
+                    }
+                    else
+                    {
+                        randET = gen.Next(19);
+                        temprec = BeeRec[randET];
+                        int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
+                        enemyBull.Add(enemyB);
+                    }
+                }
+
+                ////Removes any bullets that are out of the bounds
+                //for (int x = 0; x < enemyBull.Count(); x++)
+                //{
+                //    int[,] bulletCoords = enemyBull.ElementAt<int[,]>(x);
+                //    if (bulletCoords[0, 0] > 480 || bulletCoords[0, 0] < -12 || bulletCoords[0, 1] > 640 || bulletCoords[0, 1] < -24) { enemyBull.RemoveAt(x); }
+                //    Rectangle tempRecangle = new Rectangle(bulletCoords[0, 0], bulletCoords[0, 1], 12, 24);
+                //    for (int i = 0; i < RedRec.Count; i++)
+                //    {
+                //        if (tempRecangle.Intersects(RedRec.ElementAt(i)))
+                //        {
+                //            enemyBull.RemoveAt(x);
+                //            RedRec.RemoveAt(i);
+                //            score += 200;
+                //            break;
+                //        }
+                //    }
+                //    for (int i = 0; i < BeeRec.Count; i++)
+                //    {
+                //        if (tempRecangle.Intersects(BeeRec.ElementAt(i)))
+                //        {
+                //            enemyBull.RemoveAt(x);
+                //            BeeRec.RemoveAt(i);
+                //            score += 100;
+                //            break;
+                //        }
+                //    }
+                //    for (int i = 0; i < BossRec.Count; i++)
+                //    {
+                //        if (tempRecangle.Intersects(BossRec.ElementAt(i)))
+                //        {
+                //            enemyBull.RemoveAt(x);
+                //            BossRec.RemoveAt(i);
+                //            score += 1000;
+                //            break;
+                //        }
+                //    }
+
+                // Moves each bullet down
+                foreach (int[,] bulletCoord in enemyBull)
+                {
+                    bulletCoord[0, 1] += 7;
+                }
             }
+
+
+
             
-
-
-            //Enemy Shooting
-            //if (timer % 120 == 0)
-            //{
-            //    randET = gen.Next(2);
-            //    if (randET == 0)
-            //    {
-            //        randET = gen.Next(3);
-            //        temprec = BossRec[randET];
-            //        int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
-            //        enemyBull.Add(enemyB);
-
-            //    }
-            //    else if (randET == 1)
-            //    {
-            //        randET = gen.Next(15);
-            //        temprec = RedRec[randET];
-            //        int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
-            //        enemyBull.Add(enemyB);
-            //    }
-            //    else
-            //    {
-            //        randET = gen.Next(19);
-            //        temprec = BeeRec[randET];
-            //        int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
-            //        enemyBull.Add(enemyB);
-            //    }
-            //}
-
-            ////Removes any bullets that are out of the bounds
-            //for (int x = 0; x < enemyBull.Count(); x++)
-            //{
-            //    int[,] bulletCoords = enemyBull.ElementAt<int[,]>(x);
-            //    if (bulletCoords[0, 0] > 480 || bulletCoords[0, 0] < -12 || bulletCoords[0, 1] > 640 || bulletCoords[0, 1] < -24) { enemyBull.RemoveAt(x); }
-            //    Rectangle tempRecangle = new Rectangle(bulletCoords[0, 0], bulletCoords[0, 1], 12, 24);
-            //    for (int i = 0; i < RedRec.Count; i++)
-            //    {
-            //        if (tempRecangle.Intersects(RedRec.ElementAt(i)))
-            //        {
-            //            enemyBull.RemoveAt(x);
-            //            RedRec.RemoveAt(i);
-            //            score += 200;
-            //            break;
-            //        }
-            //    }
-            //    for (int i = 0; i < BeeRec.Count; i++)
-            //    {
-            //        if (tempRecangle.Intersects(BeeRec.ElementAt(i)))
-            //        {
-            //            enemyBull.RemoveAt(x);
-            //            BeeRec.RemoveAt(i);
-            //            score += 100;
-            //            break;
-            //        }
-            //    }
-            //    for (int i = 0; i < BossRec.Count; i++)
-            //    {
-            //        if (tempRecangle.Intersects(BossRec.ElementAt(i)))
-            //        {
-            //            enemyBull.RemoveAt(x);
-            //            BossRec.RemoveAt(i);
-            //            score += 1000;
-            //            break;
-            //        }
-            //    }
-
-
-
-            //}
-            ////Moves each bullet down
-            //foreach (int[,] bulletCoord in enemyBull)
-            //{
-            //    bulletCoord[0, 1] += 7;
-            //}
 
 
 
 
             base.Update(gameTime);
+
         }
+          
 
 
 
@@ -867,7 +900,16 @@ namespace Galaga
                 //    Texture2D tempEnemyTexture = textureInt == 0 ? texbg : textureInt == 1 ? texrg : texbeg;
                 //    spriteBatch.Draw(tempEnemyTexture,tempEnemyRectangle,Color.White);
                 //}
-                for (int i = 0; i < BossRec.Count(); i++)
+
+                //Enemy bullet: create a rectangle and draw it
+                foreach (int[,] bulletCoords in enemyBull)
+                {
+                    Rectangle tempRecangle = new Rectangle(bulletCoords[0, 0], bulletCoords[0, 1], 12, 24);
+                    spriteBatch.Draw(EnemyBullet, tempRecangle, Color.White);
+                }
+
+
+                    for (int i = 0; i < BossRec.Count(); i++)
                 {
                     if(brB[i] == true)
                     {
