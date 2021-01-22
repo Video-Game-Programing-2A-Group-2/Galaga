@@ -139,13 +139,9 @@ namespace Galaga
             enemyInfo = new List<Object>();
             //current enemy spawn and location
 
-            BossRec = new List<Rectangle>();
-            RedRec = new List<Rectangle>();
-            BeeRec = new List<Rectangle>();
+            
 
-            brB = new List<bool>();
-            rrB = new List<bool>();
-            berB = new List<bool>();
+            
             //List<Rectangle> BossRec = new List<Rectangle>();
             //List<Rectangle> RedRec = new List<Rectangle>();
             //List<Rectangle> BeeRec = new List<Rectangle>();
@@ -183,9 +179,7 @@ namespace Galaga
             //Add Given enemies to Screen
 
 
-            for (int i = 0; i < 4; i++) { brB.Add(true); }
-            for (int i = 0; i < 16; i++) { rrB.Add(true); }
-            for (int i = 0; i < 20; i++) { berB.Add(true); }
+            
             loadShips();
 
             timer = 0;
@@ -220,6 +214,9 @@ namespace Galaga
 
         void loadShips()
         {
+            BossRec = new List<Rectangle>();
+            RedRec = new List<Rectangle>();
+            BeeRec = new List<Rectangle>();
             BossRec.Add(recbg1 = new Rectangle(208, 50, 16, 16));
             BossRec.Add(recbg2 = new Rectangle(224, 50, 16, 16));
             BossRec.Add(recbg3 = new Rectangle(240, 50, 16, 16));
@@ -262,6 +259,12 @@ namespace Galaga
             BeeRec.Add(recbeg18 = new Rectangle(272, 114, 16, 16));
             BeeRec.Add(recbeg19 = new Rectangle(288, 114, 16, 16));
             BeeRec.Add(recbeg20 = new Rectangle(304, 114, 16, 16));
+            brB = new List<bool>();
+            rrB = new List<bool>();
+            berB = new List<bool>();
+            for (int i = 0; i < 4; i++) { brB.Add(true); }
+            for (int i = 0; i < 16; i++) { rrB.Add(true); }
+            for (int i = 0; i < 20; i++) { berB.Add(true); }
         }
 
         protected override void LoadContent()
@@ -836,12 +839,26 @@ namespace Galaga
                     temprec.Y = 114 + (int)y5;
                     BeeRec[19] = temprec;
                 }
-
-                if(BeeRec.Count == 0 && RedRec.Count == 0 && BossRec.Count == 0)
+                bool allFalse = true;
+                for(int i = 0; i < brB.Count(); i++)
+                {
+                    if (brB[i] == true)
+                        allFalse = false;
+                }
+                for (int i = 0; i < berB.Count(); i++)
+                {
+                    if (berB[i] == true)
+                        allFalse = false;
+                }
+                for(int i = 0; i < rrB.Count(); i++)
+                {
+                    if (rrB[i] == true)
+                        allFalse = false;
+                }
+                if(allFalse)
                 {
                     loadShips();
                 }
-
                 //Enemy Shooting
                 if (timer % 120 == 0)
                 {
