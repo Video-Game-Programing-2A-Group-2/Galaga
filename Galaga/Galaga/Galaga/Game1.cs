@@ -131,12 +131,9 @@ namespace Galaga
             twoplayer = false;
             highscore = false;
             old = Keyboard.GetState();
-
-            BossRec.Add(recbg1 = new Rectangle(208, 50, 16, 16));
-
             
-            /*BossRec.Add(recbg1 = new Rectangle(208, 50, 16, 16));
->>>>>>> 85cdff41b3cdd72bfc3148c8120a8bc31427d1a6
+            
+            BossRec.Add(recbg1 = new Rectangle(208, 50, 16, 16));
             BossRec.Add(recbg2 = new Rectangle(224, 50, 16, 16));
             BossRec.Add(recbg3 = new Rectangle(240, 50, 16, 16));
             BossRec.Add(recbg4 = new Rectangle(256, 50, 16, 16));
@@ -177,7 +174,7 @@ namespace Galaga
             BeeRec.Add(recbeg17 = new Rectangle(256, 114, 16, 16));
             BeeRec.Add(recbeg18 = new Rectangle(272, 114, 16, 16));
             BeeRec.Add(recbeg19 = new Rectangle(288, 114, 16, 16));
-            BeeRec.Add(recbeg20 = new Rectangle(304, 114, 16, 16));*/
+            BeeRec.Add(recbeg20 = new Rectangle(304, 114, 16, 16));
 
             timer = 0;
             seconds = 0;
@@ -377,9 +374,9 @@ namespace Galaga
                         score += tempAlienType == 0 ? 1000 : tempAlienType == 1?200:100;
                     }
                 }
-               /* for(int i = 0; i < RedRec.Count;i++)
+                for (int i = 0; i < RedRec.Count; i++)
                 {
-                    if(tempRecangle.Intersects(RedRec.ElementAt(i)))
+                    if (tempRecangle.Intersects(RedRec.ElementAt(i)))
                     {
                         bulletLocations.RemoveAt(x);
                         RedRec.RemoveAt(i);
@@ -406,7 +403,7 @@ namespace Galaga
                         score += 1000;
                         break;
                     }
-                }*/
+                }
             }
             //Moves each bullet up
             foreach (int[,] bulletCoord in bulletLocations) {
@@ -851,23 +848,22 @@ namespace Galaga
                 //boss galaga
                 for (int i = 0; i < BossRec.Count(); i++) { spriteBatch.Draw(texbg, BossRec[i], Color.White); }
                 //Draw all the enemies
-                for (int i=0;i<enemyInfo.Count();i++) {
-                    //Get details about the enemy(location,texture)
-                    List<Object> enemyDetails = (List<Object>)enemyInfo.ElementAt<Object>(i);
-                    //Create a temporary rectangle for the enemy
-                    Rectangle tempEnemyRectangle = (Rectangle)enemyDetails.ElementAt<Object>(0);
-                    //Get the number which represents the texture
-                    int textureInt = (int)enemyDetails.ElementAt<Object>(1);
-                    //Sets the texture from the info given
-                    Texture2D tempEnemyTexture = textureInt == 0 ? texbg : textureInt == 1 ? texrg : texbeg;
-                    spriteBatch.Draw(tempEnemyTexture,tempEnemyRectangle,Color.White);
-                }
-                /*for (int i = 0; i < BossRec.Count(); i++) { spriteBatch.Draw(texbg, BossRec[i], Color.White); }
->>>>>>> 85cdff41b3cdd72bfc3148c8120a8bc31427d1a6
+                //for (int i=0;i<enemyInfo.Count();i++) {
+                //    //Get details about the enemy(location,texture)
+                //    List<Object> enemyDetails = (List<Object>)enemyInfo.ElementAt<Object>(i);
+                //    //Create a temporary rectangle for the enemy
+                //    Rectangle tempEnemyRectangle = (Rectangle)enemyDetails.ElementAt<Object>(0);
+                //    //Get the number which represents the texture
+                //    int textureInt = (int)enemyDetails.ElementAt<Object>(1);
+                //    //Sets the texture from the info given
+                //    Texture2D tempEnemyTexture = textureInt == 0 ? texbg : textureInt == 1 ? texrg : texbeg;
+                //    spriteBatch.Draw(tempEnemyTexture,tempEnemyRectangle,Color.White);
+                //}
+                for (int i = 0; i < BossRec.Count(); i++) { spriteBatch.Draw(texbg, BossRec[i], Color.White); }
                 //red galaga
                 for (int i = 0; i < RedRec.Count(); i++) { spriteBatch.Draw(texrg, RedRec[i], Color.White); }
                 //bee galaga
-                for (int i = 0; i < BeeRec.Count; i++) { spriteBatch.Draw(texbeg, BeeRec[i], Color.White); }*/
+                for (int i = 0; i < BeeRec.Count; i++) { spriteBatch.Draw(texbeg, BeeRec[i], Color.White); }
             }
 
             
