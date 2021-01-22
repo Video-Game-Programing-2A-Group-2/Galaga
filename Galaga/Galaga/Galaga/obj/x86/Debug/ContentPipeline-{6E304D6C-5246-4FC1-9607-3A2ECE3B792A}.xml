@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\spaceship.xnb</Output>
-      <Time>2021-01-21T23:25:14.7455258-06:00</Time>
+      <Time>2021-01-22T00:26:59.3414644-06:00</Time>
     </Item>
     <Item>
       <Source>spaceship2.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\spaceship2.xnb</Output>
-      <Time>2021-01-21T23:25:14.7095175-06:00</Time>
+      <Time>2021-01-22T00:26:59.3084565-06:00</Time>
     </Item>
     <Item>
       <Source>bullet.png</Source>
