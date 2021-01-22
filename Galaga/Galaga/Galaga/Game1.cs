@@ -720,7 +720,7 @@ namespace Galaga
 
 
             //Enemy Shooting
-            //if (timer % 2 == 0)
+            //if (timer % 120 == 0)
             //{
             //    randET = gen.Next(2);
             //    if (randET == 0)
@@ -787,12 +787,11 @@ namespace Galaga
 
 
             //}
-            ////Moves each bullet up
+            ////Moves each bullet down
             //foreach (int[,] bulletCoord in enemyBull)
             //{
             //    bulletCoord[0, 1] += 7;
             //}
-            //old = kb;
 
 
 
