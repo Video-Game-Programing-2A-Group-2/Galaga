@@ -392,8 +392,8 @@ namespace Galaga
                     if (tempRecangle.Intersects(RedRec.ElementAt(i)))
                     {
                         bulletLocations.RemoveAt(x);
-                        rrB[i] = false;
                         score += 200;
+                        rrB[i] = false;
                         break;
                     }
                 }
@@ -402,8 +402,8 @@ namespace Galaga
                     if (tempRecangle.Intersects(BeeRec.ElementAt(i)))
                     {
                         bulletLocations.RemoveAt(x);
-                        berB[i] = false;
                         score += 100;
+                        berB[i] = false;
                         break;
                     }
                 }
@@ -412,8 +412,8 @@ namespace Galaga
                     if (tempRecangle.Intersects(BossRec.ElementAt(i)))
                     {
                         bulletLocations.RemoveAt(x);
-                        brB[i] = false;
                         score += 1000;
+                        brB[i] = false;
                         break;
                     }
                 }
@@ -819,14 +819,7 @@ namespace Galaga
                     bulletCoord[0, 1] += 7;
                 }
             }
-
-
-
             
-
-
-
-
             base.Update(gameTime);
 
         }
