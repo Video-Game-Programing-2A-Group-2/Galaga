@@ -114,6 +114,5 @@ C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\
 C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\obj\x86\Debug\Galaga.exe
 C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\obj\x86\Debug\Galaga.pdb
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\obj\x86\Debug\Galaga.csprojResolveAssemblyReference.cache
 C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\eBullet.xnb
-C:\Users\rishi\Documents\Github\C#\Galaga-Game\Galaga\Galaga\Galaga\bin\x86\Debug\Content\eBullet.xnb
+C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\obj\x86\Debug\Galaga.csprojResolveAssemblyReference.cache
