@@ -1,24 +1,24 @@
-space.xnb
-galaga.xnb
-Pointer.xnb
-spaceship.xnb
-spaceship2.xnb
-bullet.xnb
-BeeGalaga.xnb
-BossGalaga.xnb
-RedGalaga.xnb
-eBullet.xnb
-HomePlayerSelection.xnb
-01 Stage Intro.xnb
-02 Fighter Captured.xnb
-03 Fighter Rescued.xnb
-04 Captured Fighter Destroyed.xnb
-08 1-Up.xnb
-09 Die-Start Up Sound.xnb
-01 Stage Intro.wma
-02 Fighter Captured.wma
-03 Fighter Rescued.wma
-04 Captured Fighter Destroyed.wma
-08 1-Up.wma
-09 Die-Start Up Sound.wma
+Content\space.xnb
+Content\galaga.xnb
+Content\Pointer.xnb
+Content\spaceship.xnb
+Content\spaceship2.xnb
+Content\bullet.xnb
+Content\BeeGalaga.xnb
+Content\BossGalaga.xnb
+Content\RedGalaga.xnb
+Content\eBullet.xnb
+Content\HomePlayerSelection.xnb
+Content\01 Stage Intro.xnb
+Content\02 Fighter Captured.xnb
+Content\03 Fighter Rescued.xnb
+Content\04 Captured Fighter Destroyed.xnb
+Content\08 1-Up.xnb
+Content\09 Die-Start Up Sound.xnb
+Content\01 Stage Intro.wma
+Content\02 Fighter Captured.wma
+Content\03 Fighter Rescued.wma
+Content\04 Captured Fighter Destroyed.wma
+Content\08 1-Up.wma
+Content\09 Die-Start Up Sound.wma
 Content\high.txt
