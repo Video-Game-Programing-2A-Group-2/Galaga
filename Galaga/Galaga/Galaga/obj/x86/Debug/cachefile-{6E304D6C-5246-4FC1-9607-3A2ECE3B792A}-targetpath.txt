@@ -7,6 +7,7 @@ Content\bullet.xnb
 Content\BeeGalaga.xnb
 Content\BossGalaga.xnb
 Content\RedGalaga.xnb
+Content\eBullet.xnb
 Content\HomePlayerSelection.xnb
 Content\01 Stage Intro.xnb
 Content\01 Stage Intro.wma
@@ -20,5 +21,4 @@ Content\08 1-Up.xnb
 Content\08 1-Up.wma
 Content\09 Die-Start Up Sound.xnb
 Content\09 Die-Start Up Sound.wma
-Content\eBullet.xnb
 Content\high.txt

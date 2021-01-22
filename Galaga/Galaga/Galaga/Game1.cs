@@ -726,10 +726,10 @@ namespace Galaga
                 {
 
                     //bullet 1
-                    randET = gen.Next(2);
+                    randET = gen.Next(3);
                     if (randET == 0)
                     {
-                        randET = gen.Next(3);
+                        randET = gen.Next(4);
                         temprec = BossRec[randET];
                         int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
                         enemyBull.Add(enemyB);
@@ -737,24 +737,24 @@ namespace Galaga
                     }
                     else if (randET == 1)
                     {
-                        randET = gen.Next(15);
+                        randET = gen.Next(16);
                         temprec = RedRec[randET];
                         int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
                         enemyBull.Add(enemyB);
                     }
                     else
                     {
-                        randET = gen.Next(19);
+                        randET = gen.Next(20);
                         temprec = BeeRec[randET];
                         int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
                         enemyBull.Add(enemyB);
                     }
 
                     //bullet 2
-                    randET = gen.Next(2);
+                    randET = gen.Next(3);
                     if (randET == 0)
                     {
-                        randET = gen.Next(3);
+                        randET = gen.Next(4);
                         temprec = BossRec[randET];
                         int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
                         enemyBull.Add(enemyB);
@@ -762,18 +762,24 @@ namespace Galaga
                     }
                     else if (randET == 1)
                     {
-                        randET = gen.Next(15);
+                        randET = gen.Next(16);
                         temprec = RedRec[randET];
                         int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
                         enemyBull.Add(enemyB);
                     }
                     else
                     {
-                        randET = gen.Next(19);
+                        randET = gen.Next(20);
                         temprec = BeeRec[randET];
                         int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
                         enemyBull.Add(enemyB);
                     }
+                }
+
+                //moves enemy bullet down
+                foreach (int[,] bulletCoord in enemyBull)
+                {
+                    bulletCoord[0, 1] += 7;
                 }
 
                 ////Removes any bullets that are out of the bounds
@@ -812,12 +818,8 @@ namespace Galaga
                 //            break;
                 //        }
                 //    }
+                
 
-                // Moves each bullet down
-                foreach (int[,] bulletCoord in enemyBull)
-                {
-                    bulletCoord[0, 1] += 7;
-                }
             }
             
             base.Update(gameTime);

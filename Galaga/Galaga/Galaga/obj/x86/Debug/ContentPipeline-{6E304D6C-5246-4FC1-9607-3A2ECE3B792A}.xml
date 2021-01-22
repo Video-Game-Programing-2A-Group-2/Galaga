@@ -83,6 +83,15 @@
       <Time>2021-01-20T21:58:55.3019151-06:00</Time>
     </Item>
     <Item>
+      <Source>eBullet.png</Source>
+      <Name>eBullet</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\eBullet.xnb</Output>
+      <Time>2021-01-21T23:28:17.5621252-06:00</Time>
+    </Item>
+    <Item>
       <Source>HomePlayerSelection.spritefont</Source>
       <Name>HomePlayerSelection</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -150,15 +159,6 @@
       <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\09 Die-Start Up Sound.xnb</Output>
       <Extra>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\09 Die-Start Up Sound.wma</Extra>
       <Time>2021-01-18T23:47:58.6278841-06:00</Time>
-    </Item>
-    <Item>
-      <Source>eBullet.png</Source>
-      <Name>eBullet</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Content\eBullet.xnb</Output>
-      <Time>2021-01-21T23:28:17.5621252-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
