@@ -111,7 +111,6 @@ C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\
 C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
 C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
 C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
-C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\obj\x86\Debug\Galaga.csprojResolveAssemblyReference.cache
 C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\obj\x86\Debug\Galaga.exe
 C:\Users\Venkat Sagi\Documents\GitHub\Galaga\Galaga\Galaga\Galaga\obj\x86\Debug\Galaga.pdb

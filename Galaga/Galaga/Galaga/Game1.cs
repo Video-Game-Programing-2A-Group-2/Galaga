@@ -59,6 +59,10 @@ namespace Galaga
         List<Rectangle> BossRec = new List<Rectangle>();
         List<Rectangle> RedRec = new List<Rectangle>();
         List<Rectangle> BeeRec = new List<Rectangle>();
+
+        List<bool> brB = new List<bool>();
+        List<bool> rrB = new List<bool>();
+        List<bool> berB = new List<bool>();
         //List<Rectangle> BossRec = new List<Rectangle>();
         //List<Rectangle> RedRec = new List<Rectangle>();
         //List<Rectangle> BeeRec = new List<Rectangle>();
@@ -175,6 +179,11 @@ namespace Galaga
             BeeRec.Add(recbeg18 = new Rectangle(272, 114, 16, 16));
             BeeRec.Add(recbeg19 = new Rectangle(288, 114, 16, 16));
             BeeRec.Add(recbeg20 = new Rectangle(304, 114, 16, 16));
+
+            for (int i = 0; i < 4; i++) { brB.Add(true); }
+            for (int i = 0; i < 16; i++) { rrB.Add(true); }
+            for (int i = 0; i < 20; i++) { berB.Add(true); }
+
 
             timer = 0;
             seconds = 0;
@@ -379,7 +388,7 @@ namespace Galaga
                     if (tempRecangle.Intersects(RedRec.ElementAt(i)))
                     {
                         bulletLocations.RemoveAt(x);
-                        RedRec.RemoveAt(i);
+                        rrB[i] = false;
                         score += 200;
                         break;
                     }
@@ -389,7 +398,7 @@ namespace Galaga
                     if (tempRecangle.Intersects(BeeRec.ElementAt(i)))
                     {
                         bulletLocations.RemoveAt(x);
-                        BeeRec.RemoveAt(i);
+                        berB[i] = false;
                         score += 100;
                         break;
                     }
@@ -399,7 +408,7 @@ namespace Galaga
                     if (tempRecangle.Intersects(BossRec.ElementAt(i)))
                     {
                         bulletLocations.RemoveAt(x);
-                        BossRec.RemoveAt(i);
+                        brB[i] = false;
                         score += 1000;
                         break;
                     }
@@ -859,11 +868,29 @@ namespace Galaga
                 //    Texture2D tempEnemyTexture = textureInt == 0 ? texbg : textureInt == 1 ? texrg : texbeg;
                 //    spriteBatch.Draw(tempEnemyTexture,tempEnemyRectangle,Color.White);
                 //}
-                for (int i = 0; i < BossRec.Count(); i++) { spriteBatch.Draw(texbg, BossRec[i], Color.White); }
+                for (int i = 0; i < BossRec.Count(); i++)
+                {
+                    if(brB[i] == true)
+                    {
+                        spriteBatch.Draw(texbg, BossRec[i], Color.White);
+                    }
+                }
                 //red galaga
-                for (int i = 0; i < RedRec.Count(); i++) { spriteBatch.Draw(texrg, RedRec[i], Color.White); }
+                for (int i = 0; i < RedRec.Count(); i++)
+                {
+                    if (rrB[i] == true)
+                    {
+                        spriteBatch.Draw(texrg, RedRec[i], Color.White);
+                    }
+                }
                 //bee galaga
-                for (int i = 0; i < BeeRec.Count; i++) { spriteBatch.Draw(texbeg, BeeRec[i], Color.White); }
+                for (int i = 0; i < BeeRec.Count; i++)
+                {
+                    if (berB[i] == true)
+                    {
+                        spriteBatch.Draw(texbeg, BeeRec[i], Color.White);
+                    }
+                }
             }
 
             
