@@ -937,6 +937,11 @@ namespace Galaga
             spriteBatch.Begin();
             spriteBatch.Draw(space,background,Color.White);
             spriteBatch.DrawString(homefont, "High Score: ", new Vector2(150, 10), Color.Red);
+            if (numOfPlayerLives == 0)
+            {
+                spriteBatch.DrawString(homefont, "You Died", new Vector2(200, 100), Color.White);
+                spriteBatch.DrawString(homefont, "Hit enter to return to the Main Menu", new Vector2(75, 300), Color.White);
+            }
             spriteBatch.DrawString(homefont, highscoreNum.ToString(), new Vector2(275, 10), Color.White);
             //Draws the home screen if the player hasn't started a game
             if (homeScreen && !gameOver)
@@ -966,7 +971,7 @@ namespace Galaga
                     }
                     //Draw the ship
                     spriteBatch.Draw(tempShipTexture, shipRectangle, Color.White);
-                    for(int i = 0; i < shipsLeft; i++)
+                    for(int i = 0; i < numOfPlayerLives; i++)
                     {
                         spriteBatch.Draw(tempShipTexture, new Rectangle(375 + (25*i), 10, 20, 20), Color.White);
                     }
@@ -1025,16 +1030,6 @@ namespace Galaga
                     }
                 }
             }
-            else if(gameOver)
-            {
-                spriteBatch.DrawString(homefont, "You Died", new Vector2(200,100), Color.White);
-                spriteBatch.DrawString(homefont, "Hit enter to return to the Main Menu", new Vector2(75,300), Color.White);
-            }
-
-            
-           
-
-
             spriteBatch.End();
             base.Draw(gameTime);
         }
