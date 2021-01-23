@@ -38,7 +38,7 @@ namespace Galaga
         List<int[,]> bulletLocations = new List<int[,]>();
 
         int[] timeForPlayers = new int[2];
-
+        int lifeMultiple = 0;
         bool mainmenu;
         bool oneplayer;
         bool twoplayer;
@@ -46,33 +46,33 @@ namespace Galaga
         Vector2 arrowPos;
         int highscoreNum;
         //Keeps track of whether the game has started or not
-        bool homeScreen = true;
+        bool homeScreen;
         int[] playerXLocs;
-        int score = 0;
-
-        int shipsLeft = 2;
-        int invincibilityTimer = 0;
+        int score ;
+        int livesGiven;
+        int shipsLeft ;
+        int invincibilityTimer;
 
         //Stores number if lives
-        int numOfPlayerLives = 3;
+        int numOfPlayerLives;
         //Stores info about each enemy
-        List<Object> enemyInfo = new List<Object>();
+        List<Object> enemyInfo ;
         //current enemy spawn and location
         
-        List<Rectangle> BossRec = new List<Rectangle>();
-        List<Rectangle> RedRec = new List<Rectangle>();
-        List<Rectangle> BeeRec = new List<Rectangle>();
+        List<Rectangle> BossRec;
+        List<Rectangle> RedRec;
+        List<Rectangle> BeeRec;
 
-        List<bool> brB = new List<bool>();
-        List<bool> rrB = new List<bool>();
-        List<bool> berB = new List<bool>();
+        List<bool> brB ;
+        List<bool> rrB;
+        List<bool> berB;
         //List<Rectangle> BossRec = new List<Rectangle>();
         //List<Rectangle> RedRec = new List<Rectangle>();
         //List<Rectangle> BeeRec = new List<Rectangle>();
 
-        List<Rectangle> EnemyRec = new List<Rectangle>();
+        List<Rectangle> EnemyRec;
 
-        List<int[,]> enemyBull = new List<int[,]>();
+        List<int[,]> enemyBull;
 
         Rectangle temprec;
 
@@ -92,7 +92,7 @@ namespace Galaga
         int randET;
 
         Random gen = new Random();
-
+        bool gameOver;
 
         Song intro;
         Song captured;
@@ -119,6 +119,47 @@ namespace Galaga
         {
             // TODO: Add your initialization logic here
             //Initialize all the variables
+            bulletLocations = new List<int[,]>();
+
+            timeForPlayers = new int[2];
+            lifeMultiple = 0;
+            
+            //Keeps track of whether the game has started or not
+             homeScreen = true;
+            
+             score = 0;
+             livesGiven = 0;
+             shipsLeft = 2;
+             invincibilityTimer = 0;
+
+            //Stores number if lives
+             numOfPlayerLives = 3;
+            //Stores info about each enemy
+             enemyInfo = new List<Object>();
+            //current enemy spawn and location
+
+            BossRec = new List<Rectangle>();
+             RedRec = new List<Rectangle>();
+             BeeRec = new List<Rectangle>();
+
+             brB = new List<bool>();
+             rrB = new List<bool>();
+            berB = new List<bool>();
+            //List<Rectangle> BossRec = new List<Rectangle>();
+            //List<Rectangle> RedRec = new List<Rectangle>();
+            //List<Rectangle> BeeRec = new List<Rectangle>();
+
+           EnemyRec = new List<Rectangle>();
+
+             enemyBull = new List<int[,]>();
+
+          gen = new Random();
+
+
+
+
+
+
 
             //Create 8 of each enemy type
             for (int y = 0; y < 3; y++) {
@@ -130,7 +171,7 @@ namespace Galaga
                 }
             }
 
-
+            gameOver = false;
             background = new Rectangle(0,0,GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             name = new Rectangle(GraphicsDevice.Viewport.Width/2 - 160, 100,320,179);
             arrow = new Rectangle(name.X+50,name.Y+200,25,25);
@@ -291,14 +332,14 @@ namespace Galaga
             // TODO: Add your update logic here
             //Down and up are used to switch between single player and two player
             if (invincibilityTimer>0) { invincibilityTimer--; }
-            if(kb.IsKeyDown(Keys.Down) && !old.IsKeyDown(Keys.Down))
+            if(homeScreen && !gameOver && kb.IsKeyDown(Keys.Down) && !old.IsKeyDown(Keys.Down))
             {
                 if (arrow.Y == arrowPos.Y)
                     arrow.Y += 50;
                 else
                     arrow.Y = (int)arrowPos.Y;
             }
-            if (kb.IsKeyDown(Keys.Up) && !old.IsKeyDown(Keys.Up))
+            if (homeScreen && !gameOver && kb.IsKeyDown(Keys.Up) && !old.IsKeyDown(Keys.Up))
             {
                 if (arrow.Y == arrowPos.Y)
                     arrow.Y += 50;
@@ -306,7 +347,7 @@ namespace Galaga
                     arrow.Y = (int)arrowPos.Y;
             }
             //Pressing enter starts the game
-            if (kb.IsKeyDown(Keys.Enter) && !old.IsKeyDown(Keys.Enter) && playerXLocs == null)
+            if (homeScreen && !gameOver && kb.IsKeyDown(Keys.Enter) && !old.IsKeyDown(Keys.Enter) && playerXLocs == null)
             {
                 homeScreen = false;
                 if (arrow.Y == arrowPos.Y)
@@ -319,6 +360,10 @@ namespace Galaga
                     playerXLocs[1] = 400;
                 }
                 playerXLocs[0] = 30;
+            }
+            if(gameOver && kb.IsKeyDown(Keys.Enter))
+            {
+                Initialize();
             }
             //The left right controls for both players. A and D for player 1,and Left and Right for player 2
             Console.WriteLine("TEST");
@@ -351,7 +396,7 @@ namespace Galaga
                 }
             }
             //If the game has started,display everything that is needed
-            if (!homeScreen) {
+            if (!homeScreen && !gameOver) {
                 //If Space is pressed a bullet is fired for player one
              for (int x = 0; x < playerXLocs.GetLength(0); x++) { if (playerXLocs[x] < 0) { playerXLocs[x] = 0; } else if (playerXLocs[x] > 430) { playerXLocs[x] = 430; } }
                 if (kb.IsKeyDown(Keys.Space) && old.IsKeyUp(Keys.Space) && timeForPlayers[0] == 0 && playerXLocs.Length >= 1)
@@ -397,6 +442,7 @@ namespace Galaga
                     {
                         bulletLocations.RemoveAt(x);
                         score += 200;
+                        lifeMultiple += 200;
                         rrB[i] = false;
                         break;
                     }
@@ -407,6 +453,7 @@ namespace Galaga
                     {
                         bulletLocations.RemoveAt(x);
                         score += 100;
+                        lifeMultiple += 100;
                         berB[i] = false;
                         break;
                     }
@@ -417,20 +464,21 @@ namespace Galaga
                     {
                         bulletLocations.RemoveAt(x);
                         score += 1000;
+                        lifeMultiple += 1000;
                         brB[i] = false;
                         break;
                     }
                 }
-                /* for (int i=0; i<enemyBull.Count();i++) {
-                     int[,] enemyBulletCoords = enemyBull.ElementAt<int[,]>(i);
-                     Rectangle enemyBulletRectangle = new Rectangle(enemyBulletCoords[0,0],enemyBulletCoords[0,1],12,24);
-                     for (int b=0;b<playerXLocs.Count();b++) {
-                         if (enemyBulletRectangle.Intersects(new Rectangle(playerXLocs[b],570,12,24))) {
-                             enemyBull.RemoveAt(i);
-                             numOfPlayerLives--;
-                         }
-                     }
-                 }*/
+                //for (int i=0; i<enemyBull.Count();i++) {
+                //     int[,] enemyBulletCoords = enemyBull.ElementAt<int[,]>(i);
+                //     Rectangle enemyBulletRectangle = new Rectangle(enemyBulletCoords[0,0],enemyBulletCoords[0,1],12,24);
+                //     for (int b=0;b<playerXLocs.Count();b++) {
+                //         if (enemyBulletRectangle.Intersects(new Rectangle(playerXLocs[b],570,12,24))) {
+                //             enemyBull.RemoveAt(i);
+                //             numOfPlayerLives--;
+                //         }
+                //     }
+                // }
             }
             for(int b= 0;b<enemyBull.Count();b++)
             {
@@ -442,9 +490,19 @@ namespace Galaga
                     if (playerRectangle.Intersects(enemyRectangle))
                     {
                         enemyBull.Remove(enemyBullet);
-                        if (invincibilityTimer==0 && numOfPlayerLives>0) {
-                            numOfPlayerLives--;
-                            invincibilityTimer = 60;
+                        if (invincibilityTimer==0) {
+                            if(shipsLeft != 0)
+                            {
+                                numOfPlayerLives--;
+                                shipsLeft--;
+                                invincibilityTimer = 60;
+                                MediaPlayer.Play(diestartup);
+                            }
+                            else
+                            {
+                                gameOver = true;
+                                homeScreen = true;
+                            }
                         }
                     }
                 }
@@ -461,6 +519,13 @@ namespace Galaga
             if(homeScreen == false)
             {
                 timer++;
+                if(lifeMultiple > 150000 && livesGiven < 8)
+                {
+                    shipsLeft++;
+                    lifeMultiple = 0;
+                    livesGiven++;
+                    MediaPlayer.Play(oneup);
+                }
                 if (timer >= 240.0) { timer = 0; }
                 if (timer < 120.0) { expand = true; }
                 else { expand = false; }
@@ -874,7 +939,7 @@ namespace Galaga
             spriteBatch.DrawString(homefont, "High Score: ", new Vector2(150, 10), Color.Red);
             spriteBatch.DrawString(homefont, highscoreNum.ToString(), new Vector2(275, 10), Color.White);
             //Draws the home screen if the player hasn't started a game
-            if (homeScreen)
+            if (homeScreen && !gameOver)
             {
                 spriteBatch.Draw(galagaNameArt, name, Color.White);
                 spriteBatch.Draw(pointer, arrow, Color.White);
@@ -884,9 +949,9 @@ namespace Galaga
                 
             }
             //Otherwise draws the game
-            else 
+            else if(!homeScreen && !gameOver)
             {
-                spriteBatch.DrawString(homefont, "Lives: " + numOfPlayerLives, new Vector2(340, 10), Color.Red);
+                //spriteBatch.DrawString(homefont, "Lives: " + numOfPlayerLives, new Vector2(300, 10), Color.Red);
                 spriteBatch.DrawString(homefont, "Scores: ", new Vector2(20, 10), Color.Red);
                 spriteBatch.DrawString(homefont, score .ToString(), new Vector2(100, 10), Color.White);
                 //For each player loop through once and draw ship
@@ -903,7 +968,7 @@ namespace Galaga
                     spriteBatch.Draw(tempShipTexture, shipRectangle, Color.White);
                     for(int i = 0; i < shipsLeft; i++)
                     {
-                        //spriteBatch.Draw(tempShipTexture, new Rectangle(10 + (50*i), 600, 40, 40), Color.White);
+                        spriteBatch.Draw(tempShipTexture, new Rectangle(375 + (25*i), 10, 20, 20), Color.White);
                     }
                 }
                 //For each bullet,create a rectangle and draw it
@@ -959,6 +1024,11 @@ namespace Galaga
                         spriteBatch.Draw(texbeg, BeeRec[i], Color.White);
                     }
                 }
+            }
+            else if(gameOver)
+            {
+                spriteBatch.DrawString(homefont, "You Died", new Vector2(200,100), Color.White);
+                spriteBatch.DrawString(homefont, "Hit enter to return to the Main Menu", new Vector2(75,300), Color.White);
             }
 
             
