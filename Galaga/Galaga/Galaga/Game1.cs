@@ -868,6 +868,7 @@ namespace Galaga
                     if (randET == 0)
                     {
                         randET = gen.Next(4);
+                        while(brB[randET] == false) { randET = gen.Next(4); }
                         temprec = BossRec[randET];
                         int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
                         enemyBull.Add(enemyB);
@@ -876,6 +877,7 @@ namespace Galaga
                     else if (randET == 1)
                     {
                         randET = gen.Next(16);
+                        while (rrB[randET] == false) { randET = gen.Next(4); }
                         temprec = RedRec[randET];
                         int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
                         enemyBull.Add(enemyB);
@@ -883,6 +885,7 @@ namespace Galaga
                     else
                     {
                         randET = gen.Next(20);
+                        while (berB[randET] == false) { randET = gen.Next(4); }
                         temprec = BeeRec[randET];
                         int[,] enemyB = new int[,] { { temprec.X, temprec.Y } };
                         enemyBull.Add(enemyB);
